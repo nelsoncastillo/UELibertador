@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class=" svg"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!-- base href="https://fs10.formsite.com/nel_cas_ruiz1/" -->
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@formsite">
+<meta property="og:title" content="Representante">
+<meta property="og:type" content="website">
+<!-- base href="https://fs10.formsite.com/nel_cas_ruiz1/" -->
+<meta property="fb:admins" content="150429050199">
+<title>Sistemas de Registro de Alumnos</title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/fonts7.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/screen7.css">
+<link rel="stylesheet" type="text/css" media="print" href="css/print7.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="css/responsive7.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/form.css">
+</head>
+<body>
+	<script>
+	function Buscarv(){	
+	 if(document.getElementById("txtId").value===""){
+		 window.alert("Debe escribir algun ID");
+		 }
+	else{
+	 url = 'php/manejovivienda.php?modo=b&txtId=' + document.getElementById("txtId").value;
+	 window.open(url, '_blank');
+		}
+	}
+	function Listarv(){	
+	 url = 'php/manejovivienda.php?modo=l';
+	 window.open(url, '_blank');
+	}
+	
+	</script>
+
+<form method="post" id="FSForm" action="php/manejovivienda.php?modo=a" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
+<div style="display:none;">
+<input name="locid" value="nel_cas_ruiz1/form1" type="hidden">
+<input name="EParam" value="AT1kKIiyxDxm/BPsASvwoKeLTfEDMMCuUSAE7pKjsPfh/LYul01DGXj3VIU9U6+7" type="hidden">
+<input name="ElapsedTime" id="ElapsedTime" value="0" type="hidden">
+<input name="Referrer" id="Referrer" value="" type="hidden">
+<input name="subject_line" id="subject_line" autocomplete="off" type="text"><label for="subject_line">subject_line</label>
+</div>
+
+<!-- BEGIN_ITEMS -->
+<div class="form_table">
+<div class="clear"></div>
+
+<div id="q18" class="q full_width">
+<a class="item_anchor" name="ItemAnchor0"></a>
+<div class="segment_header" style="width:auto;text-align:Center;"><h1 style="font-size:18px;padding:20px 1em ;">Registro de Vivienda:</h1></div>
+</div>
+
+<div id="q1" class="q required">
+<a class="item_anchor" name="ItemAnchor1"></a>
+<label class="question top_question" for="txtId">ID&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<input name="txtId" class="text_field" id="txtId" size="10" maxlength="100" type="text" value="" required>
+</div>
+<div class="clear"></div>
+
+<div id="q36" class="q required">
+<a class="item_anchor" name="ItemAnchor1"></a>
+<label class="question top_question" for="lstTipovivienda">Tipo de Vivienda&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<select id="lstTipovivienda" name="lstTipovivienda" class="drop_down">
+<option selected="selected"></option>
+<option value="Al cuido">Al cuido</option>
+<option value="Alquilada">Alquilada</option>
+<option value="Arrimada">Arrimada</option>
+<option value="Cedida">Cedida</option>
+<option value="Conserjería">Conserjería</option>
+<option value="De la empresa">De la empresa</option>
+<option value="Herencia">Herencia</option>
+<option value="Sucesión">Sucesión</option>
+<option value="indígena">indígena</option>
+<option value="Invasión">Invasión</option>
+<option value="Tomada">Tomada</option>
+<option value="Prestada">Prestada</option>
+<option value="Refugio">Refugio</option>
+<option value="Terreno">Terreno</option>
+<option value="Propia Pagada">Propia Pagada</option>
+<option value="Propia pagándose">Propia pagándose</option>
+</select>
+</div>
+<div id="q39" class="q required">
+<a class="item_anchor" name="ItemAnchor2"></a>
+<label class="question top_question" for="lstCondicionesvida">Condiciones de la vivienda&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<select id="lstCondicionesvida" name="lstCondicionesvida" class="drop_down">
+<option selected="selected"></option>
+<option value="Deplorable">Deplorable</option>
+<option value="Deteriorada">Deteriorada</option>
+<option value="Regular">Regular</option>
+<option value="Buena">Buena</option>
+<option value="Excelente">Excelente</option>
+</select>
+</div>
+
+<div class="clear"></div>
+
+<div id="q37" class="q">
+<a class="item_anchor" name="ItemAnchor3"></a>
+<label class="question top_question" for="lstUbicacion">Ubicacion</label>
+<select id="lstUbicacion" name="lstUbicacion" class="drop_down">
+<option selected="selected"></option>
+<option value="Barrio">Barrio</option>
+<option value="Caserío">Caserío</option>
+<option value="Urbanización">Urbanización</option>
+<option value="Zona Residencial">Zona Residencial</option>
+
+</select>
+</div>
+<div id="q38" class="q">
+<a class="item_anchor" name="ItemAnchor4"></a>
+<label class="question top_question" for="txtNombreUbicacion">Nombre de la Ubicacion</label>
+<input name="txtNombreUbicacion" class="text_field" id="txtNombreUbicacion" size="25" maxlength="100" type="text">
+</div>
+
+<div class="clear"></div>
+
+<div id="q40" class="q">
+<a class="item_anchor" name="ItemAnchor5"></a>
+<label class="question top_question" for="lstTipovia">Tipo de Vía:</label>
+<select id="lstTipovia" name="lstTipovia" class="drop_down">
+<option selected="selected"></option>
+<option value="Calle">Calle</option>
+<option value="Avenida">Avenida</option>
+<option value="Callejón">Callejón</option>
+<option value="Autopista">Autopista</option>
+<option value="Boulevard">Boulevard</option>
+<option value="Camino">Camino</option>
+<option value="Carrera">Carrera</option>
+<option value="Carretera">Carretera</option>
+<option value="Escalera">Escalera</option>
+<option value="Parque">Parque</option>
+<option value="Pasaje">Pasaje</option>
+<option value="Esquina">Esquina</option>
+<option value="Manzana">Manzana</option>
+<option value="Paseo">Paseo</option>
+<option value="Plaza">Plaza</option>
+<option value="Prolongación">Prolongación</option>
+<option value="Quebrada">Quebrada</option>
+<option value="Ramal">Ramal</option>
+<option value="Ruta">Ruta</option>
+</select>
+</div>
+<div id="q41" class="q">
+<a class="item_anchor" name="ItemAnchor6"></a>
+<label class="question top_question" for="txtNombreVia">Nombre de Via</label>
+<input name="txtNombreVia" class="text_field" id="txtNombreVia" size="25" maxlength="200" type="text">
+</div>
+
+<div class="clear"></div>
+
+<div id="q31" class="q">
+<a class="item_anchor" name="ItemAnchor7"></a>
+<label class="question top_question" for="txtDireccion">Dirección</label>
+<input name="txtDireccion" class="text_field" id="txtDireccion" size="25" maxlength="200" type="text">
+</div>
+<div id="q30" class="q">
+<a class="item_anchor" name="ItemAnchor8"></a>
+<label class="question top_question" for="txtTelefono">Teléfono</label>
+<input name="txtTelefono" class="text_field" id="txtTelefono" size="25" maxlength="50" type="text">
+</div>
+<div class="clear"></div>
+
+</div>
+<!-- END_ITEMS -->
+<input name="EParam" value="FzpUCZwnDno=" type="hidden">
+<div class="outside_container">
+	<input name="Listar" value="Listar" class="submit_button" id="Listar" type="button" onclick="Listarv();">
+	<input name="Buscar" value="Buscar" class="submit_button" id="Buscar" type="button" onclick="Buscarv()">
+	<input name="Aceptar" value="Aceptar" class="submit_button" id="FSsubmit" type="submit">
+</div>
+</form>
+
+
+</body></html>

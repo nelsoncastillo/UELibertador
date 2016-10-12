@@ -1,0 +1,79 @@
+<?php 
+// aqui se contuyen los encabezados de la tabla
+include_once ("../php/conexion.php");
+$tabla='alumnos';
+//$this->tabla= $tabla;
+$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+
+  	$encabezado='<thead>';
+	$encabezado.='<tr  BGCOLOR="#58ACFA">';	
+	$pie='<tfoot>';
+	$pie.='<tr  BGCOLOR="#58ACFA">';	
+	$encabezado.= '<th>Id</th>
+                <th>Apellidos</th>
+                <th>Nombres</th>
+                <th>Sexo</th>
+                <th>Ciescolar</th>';
+	$encabezado .= 	'</tr> </thead>';
+	$pie.= '<th>Id</th>
+                <th>Apellidos</th>
+                <th>Nombres</th>
+                <th>Sexo</th>
+                <th>Ciescolar</th>';
+	$pie .= 	'</tr> </tfoot>';
+  
+$cadena= "SELECT id, apellidos, nombres, sexo, ciescolar FROM ".$tabla." ORDER BY id";
+
+//si tiene indice deberia ordenarse
+//unset($resultadoc);
+$resultarow = $con->consultar($cadena); 
+$cont=0;
+$strout2='';
+//print_r($resultarow);
+if ($resultarow) { 
+	$recordcount=$con->contar($resultarow);
+	}else{
+		$recordcount=0;
+		exit(); 
+		}
+	//echo $recordcount;
+    $id='1';
+    $datarec = '';
+	while ($row = pg_fetch_assoc($resultarow))
+	{		
+		//print_r($arr);
+		$datarec.="<tr id='alumnos_".$row['id']."'>";
+		//foreach ($arr as $rec) {
+//		$datarec.= '<td>'.$row[$rec].'</td>';
+			$datarec .= "<td id='alumnos_".$row['id']."'>".$row['id']."</td>";
+			$datarec .= "<td>".$row['apellidos']."</td>";
+			$datarec .= "<td>".$row['nombres']."</td>";
+			$datarec .= "<td>".$row['sexo']."</td>";
+			$datarec .= "<td>".$row['ciescolar']."</td>";
+			//echo $misdatos;
+		// }
+		 
+		 //$datarec.='<td>'.$row[$rec].'</td>';
+		$datarec.='</tr>';
+	 }
+// aqui se contuyen los encabezados de la tabla
+?>
+
+
+<table id="tabla_alumnos" class="dataTable" cellspacing="0" width="100%">
+<?php 
+echo $encabezado;
+echo $pie;
+?>
+    <tbody class="cebra">
+<?php 			
+echo $datarec;
+?>	 
+        </tbody>
+    </table>
+<script>
+	$(document).ready(function() {
+		$('#tabla_alumnos').DataTable();
+	} );
+</script>
+

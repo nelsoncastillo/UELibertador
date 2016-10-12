@@ -1,0 +1,169 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+        <title>Listar Cursos </title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <meta name="generator" content="Geany 1.27" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<link rel="stylesheet" type="text/css" media="all" href="css/fonts7.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="css/screen7.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="css/print7.css"/>
+<link rel="stylesheet" type="text/css" media="screen" href="css/responsive7.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="css/form.css">
+<link rel="stylesheet" type="text/css" media="all" href="tablas/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="tablas/buttons.dataTables.min.css">
+
+<link rel="stylesheet" type="text/css" media="all" href="tablas/dataTables.bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/list2.css">
+<link rel="stylesheet" type="text/css" media="all" href="tablas/dataTables.bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/list2.css">
+	
+<script type="text/javascript" src="js/form7.js"></script>
+<script type="text/javascript" src="tablas/jquery-1.12.3.js"></script>
+<script type="text/javascript" src="tablas/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="tablas/dataTables.bootstrap.min.js"></script>
+    	    
+<script type="text/javascript" src="js/form7.js"></script>
+
+<script type="text/javascript" src="tablas/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="tablas/buttons.flash.min.js"></script>
+<script type="text/javascript" src="tablas/jszip.min.js"></script>
+<script type="text/javascript" src="tablas/pdfmake.min.js"></script>
+<script type="text/javascript" src="tablas/vfs_fonts.js"></script>
+<script type="text/javascript" src="tablas/buttons.html5.min.js"></script>
+<script type="text/javascript" src="tablas/buttons.print.min.js"></script>
+		
+<script>
+$(document).ready(function (){
+	//boton alumno y genera listado alumno
+
+		$(document).on('click', "#btAlumno",function(r){
+		if (document.getElementById("lstgrupo").value === "") {
+          window.alert("Debe seleccionar un grupo para buscar");
+                } else {
+		$.ajax({
+			data: {
+				modo: 's',
+				idgrupo: document.getElementById("lstgrupo").value
+			},
+			url: 'tablas/listacursos.phtml',
+			type: 'post',
+			beforeSend: function () {
+				$("#reponseAlumno").html("Procesando, espere por favor ...");
+			},
+			success: function (response) {
+				$("#reponseAlumno").show();
+				$("#reponseAlumno").html(response);
+
+			},
+		
+		  }); 
+		}
+	});
+		
+	
+	
+	});
+</script>
+
+    </head>
+
+    <body>
+        <script>
+
+			   
+        </script>
+        <form method="post" id="FSForm" action="php/manejoprocinscripcion.php?modo=a" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
+            <div style="display:none;">
+                <input name="locid" value="nel_cas_ruiz/form1" type="hidden">
+				<input name="EParam" value="AT1kKIiyxDzVLs0SuJ0SiaeLTfEDMMCuUSAE7pKjsPclansuDaO2v1whqWN/LAwJ" type="hidden">
+				<input name="ElapsedTime" id="ElapsedTime" value="0" type="hidden">
+				<input name="Referrer" id="Referrer" value="" type="hidden">
+				<input name="subject_line" id="subject_line" autocomplete="off" type="text"><label for="subject_line">subject_line</label>
+			</div>
+
+       <!-- BEGIN_ITEMS -->
+		<div class="form_table">
+			<div class="clear"></div>
+
+			<div id="q0" class="q full_width">
+				<a class="item_anchor" name="ItemAnchor0"></a>
+				<div class="segment_header" style="width:auto;text-align:Center;">
+					<h1 style="font-size:24px;padding:20px 1em ;">Listar Cursos</h1></div>
+			</div>
+
+			<div class="clear"></div>
+
+			<div id="q44" class="q">
+				<a class="item_anchor" name="ItemAnchor1"></a>
+				<label class="question top_question" for="lstgrupo">Seleccion de Grupo  <b class="icon_required" style="color:#FF0000"> *</b></label>
+				<select id="lstgrupo" name="lstgrupo" class="drop_down" required>
+				<option selected="selected"></option>
+				<?php
+				include_once ("php/conexion.php");
+				$cadena = "SELECT id, grupo FROM grupos ORDER BY id;";
+				$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+					$resultadoc = $con->consultar($cadena); 
+					if($resultadoc){
+					$cont=$con->contar($resultadoc);
+					if($cont<=0){	
+						$filas= -1;
+						echo " <option value='EROR'> No hay ningún docente registrado </option>'";
+						}else{
+						while($resultados = $con->registros($resultadoc)) {
+							$mostrar= "ID: $resultados->id grupo: $resultados->grupo";
+							echo "<option  value='".$resultados->id."'>".$mostrar."</option>"; 
+							}//Fin while $resultados
+						}
+					}else{
+						$filas= -2;
+					}
+				?>
+				</select>
+			
+			</div>
+
+			<div class="clear"></div>
+
+			<div id="q46" class="q required"  >
+				<a class="item_anchor" name="ItemAnchor3"></a>
+				<label class="question top_question" for="msalumnos">Seleccion alumnos  </label>
+				<input name="btAlumno" type="button" id="btAlumno" value="Buscar Alumnos" /> 
+				<div class="clear">  </div>
+				<div name="reponseAlumno" id="reponseAlumno" > 
+				</div>
+
+			</div>
+		</div>
+		
+		<div class="clear"></div>
+		</div>
+		
+
+		
+                                    <!-- END_ITEMS -->
+	<input name="EParam" value="FzpUCZwnDno=" type="hidden">
+		<div class="outside_container">
+			
+		</div>
+		</form>
+        <script>                                                    
+	
+$(document).ready(function() {
+    $('#tabla_alumnos').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'excel', 'pdf', 'print'
+        ],
+        "scrollX": true
+        
+    });
+} );
+		</script>
+</body>
+
+</html>

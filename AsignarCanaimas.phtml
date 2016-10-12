@@ -1,0 +1,157 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Asignar Canaimas</title>
+	<link rel="stylesheet" type="text/css" media="all" href="tablas/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="tablas/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="css/list2.css">
+
+
+	<script type="text/javascript" src="tablas/jquery-1.12.3.js"></script>
+	<script type="text/javascript" src="tablas/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="tablas/dataTables.bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" media="all" href="tablas/buttons.dataTables.min.css">
+				
+	<script type="text/javascript" src="js/form7.js"></script>
+
+	<script type="text/javascript" src="tablas/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="tablas/buttons.flash.min.js"></script>
+	<script type="text/javascript" src="tablas/jszip.min.js"></script>
+	<script type="text/javascript" src="tablas/pdfmake.min.js"></script>
+	<script type="text/javascript" src="tablas/vfs_fonts.js"></script>
+	<script type="text/javascript" src="tablas/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="tablas/buttons.print.min.js"></script>
+		
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.27" />
+<script>
+	$(document).ready(function() {
+		$('#tabla_canaima').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'excel', 'pdf', 'print'
+        ],
+        "scrollX": true  });
+		
+	} );
+</script>	
+</head>
+
+<body>
+	<script>    
+       function recorerAlumnosCanaima(){
+		$("#tabla_canaima tbody tr").each(function (index) 
+        {
+            var idalumno, Apellidos, Nombres, cedulaescolar, serial;
+            $(this).children("td").each(function (index2) 
+            {
+                switch (index2) 
+                {
+                    case 0: idalumno = $(this).text();
+                            break;
+                    case 1: cedulaescolar = $(this).text();
+                            break;
+                    case 2: Apellidos = $(this).text();
+                            break;
+                    case 3: Nombres = $(this).text();
+                            break;
+                    case 4: serial = $(this).text();
+                            break;
+                }
+            })
+            //aqui esta recorriendo cada elemento de la tabla
+			if(serial!=''){
+			//alert(serial);
+            $.ajax({
+			data: {
+				modo: 'a',
+				idalumno: idalumno,
+				cedulaescolar: cedulaescolar,
+				serial: serial
+				},
+			url: 'php/manejocanaima.php',
+			type: 'post',
+			beforeSend: function () {
+				$("#responseCanaima").html("Procesando, espere por favor ...");
+			},
+			success: function (response) {
+				$("#responseCanaima").html(response);
+
+					},
+				});
+			}; 
+        });
+       
+    };
+	</script>
+<div id="Canaimas" align="center">
+  <table  id= "tabla_canaima" class="dataTable" cellspacing="0" width="100%">
+    <!-- IMPORTANT, class="list" have to be at tbody -->
+    <thead>
+      <tr BGCOLOR="#58ACFA">
+        <th class="id">IdAlumno</th>
+        <th class="cedulaEscolar">Cedula Escolar</th>
+        <th class="apellido">Apellidos</th>
+        <th class="nombre">Nombres</th>
+        <th class="Serial" >Serial Canaima</th>
+	</tr>
+    </thead>
+    <tfoot>
+      <tr BGCOLOR="#58ACFA">
+        <th class="id">IdAlumno</th>
+        <th class="cedulaEscolar">Cedula Escolar</th>
+        <th class="apellido">Apellidos</th>
+        <th class="nombre">Nombres</th>
+        <th class="Serial" >Serial Canaima</th>
+	</tr>
+    </tfoot>	
+	<tbody class="cebra">
+	<?php  
+	// aqui el codigo que carga la tabla, falta ver como seleccionar
+	// de la lista y pasar a esta tabla.
+	//debe correr debajo de <tbody class="list">
+	include_once ("php/conexion.php");
+        $con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+        $cadena="SELECT a.id, a.ciescolar, a.nombres, a.apellidos, asignar_canaima.serial
+                 FROM  asignar_canaima  
+                 right join alumnos as a on (asignar_canaima.alumno= a.id )";
+		$resultadoc = $con->consultar($cadena); 
+		$cont=0;
+		if ($resultadoc) { 
+			$cont=$con->contar($resultadoc);
+			}else{
+				$cont =' - sin registros - '; 	
+			}
+		 $datarec='';
+		 while($col=$con->registros($resultadoc))
+		{
+			$datarec.='<tr>';
+			$datarec .= '<td class="id">'.$col->id.'</td>';
+			$datarec .= '<td class="ciescolar">'.$col->ciescolar.'</td>';
+            $datarec .= '<td class="apellido">'.$col->apellidos.'</td>';
+            $datarec .= '<td class=nombre">'.$col->nombres.'</td>';
+            $datarec .= '<td class="serial"  class="input" contenteditable="true">'.$col->serial.'</td>';
+			$datarec.='</tr>';
+		} 
+	echo $datarec;
+	?>
+      </tr>
+    </tbody>
+  </table>
+	<div id="responseCanaima"> </div>
+</div>
+
+<div class="clear"> </div>
+
+<DIV align="center" >
+  <button id="btasignar_canaima" onclick="recorerAlumnosCanaima();">
+    Asignar Canaimas
+  </button>
+</div>
+
+</body>
+
+</html>

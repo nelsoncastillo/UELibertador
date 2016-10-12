@@ -1,0 +1,760 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class=" svg"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@formsite">
+<meta property="og:title" content="Datos de Vivienda">
+<meta property="og:type" content="website">
+<meta property="og:url" content="Vivienda.html">
+<meta property="og:site_name" content="FormSite">
+<meta property="fb:admins" content="150429050199">
+<title>Sistemas de Registro de Alumnos</title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/fonts7.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/screen7.css">
+<link rel="stylesheet" type="text/css" media="print" href="css/print7.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="css/responsive7.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/form.css">
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="js/form7.js"></script>
+</head>
+<body>
+	<script>
+	function Buscardh(){	
+	 if(document.getElementById("txtId").value===""){
+		 window.alert("Debe escribir alguna Id para buscar");
+		 }
+	else{
+	 url = 'php/manejohabitacion.php?modo=b&txtId=' + document.getElementById("txtId").value;
+	 window.open(url, '_blank');
+		}
+	}
+	function Listardh(){	
+	 url = 'php/manejohabitacion.php?modo=l';
+	 window.open(url, '_blank');
+	}
+	
+	</script>
+	
+<form method="post" id="FSForm" action="php/manejohabitacion.php?modo=a" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
+<div style="display:none;">
+<input name="locid" value="nel_cas_ruiz1/form1" type="hidden">
+<input name="EParam" value="AT1kKIiyxDxm/BPsASvwoKeLTfEDMMCuUSAE7pKjsPfh/LYul01DGXj3VIU9U6+7" type="hidden">
+<input name="ElapsedTime" id="ElapsedTime" value="0" type="hidden">
+<input name="Referrer" id="Referrer" value="" type="hidden">
+<input name="subject_line" id="subject_line" autocomplete="off" type="text"><label for="subject_line">subject_line</label>
+</div>
+
+<!-- BEGIN_ITEMS -->
+<div class="form_table">
+<div class="clear"></div>
+
+<div id="q1" class="q full_width">
+<a class="item_anchor" name="ItemAnchor0"></a>
+<div class="segment_header" style="width:auto;text-align:Center;"><h1 style="font-size:18px;padding:20px 1em ;">Datos de Habitacion:</h1></div>
+</div>
+
+<div id="q8" class="q required">
+<a class="item_anchor" name="ItemAnchor1"></a>
+<label class="question top_question" for="txtId">ID&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<input name="txtId" class="text_field" id="txtId" size="10" maxlength="100" type="text" value="" required>
+</div>
+
+<div id="q42" class="q required">
+<a class="item_anchor" name="ItemAnchor1"></a>
+<label class="question top_question" for="lstEstado">Estado&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<select id="lstEstado" name="lstEstado" class="drop_down">
+<option selected="selected"></option>
+<option value="Amazonas">Amazonas</option>
+<option value="Anzoátegui">Anzoátegui</option>
+<option value="Apure">Apure</option>
+<option value="Aragua">Aragua</option>
+<option value="Barinas">Barinas</option>
+<option value="Bolívar">Bolívar</option>
+<option value="Carabobo">Carabobo</option>
+<option value="Cojedes">Cojedes</option>
+<option value="Delta Amacuro">Delta Amacuro</option>
+<option value="Distrito Capital">Distrito Capital</option>
+<option value="Falcón">Falcón</option>
+<option value="Guárico">Guárico</option>
+<option value="Lara">Lara</option>
+<option value="Mérida">Mérida</option>
+<option value="Miranda">Miranda</option>
+<option value="Monagas">Monagas</option>
+<option value="Nueva Esparta">Nueva Esparta</option>
+<option value="Portuguesa">Portuguesa</option>
+<option value="Sucre">Sucre</option>
+<option value="Tachira">Tachira</option>
+<option value="Trujillo">Trujillo</option>
+<option value="Vargas">Vargas</option>
+<option value="Yaracuy">Yaracuy</option>
+<option value="Zulia">Zulia</option>
+</select>
+</div>
+
+<div class="clear"></div>
+
+<div id="q43" class="q required">
+<a class="item_anchor" name="ItemAnchor2"></a>
+<label class="question top_question" for="lstMunicipio">Municipio<b class="icon_required" style="color:#FF0000">*</b></label>
+<select id="lstMunicipio" name="lstMunicipio" class="drop_down">
+<option selected="selected"></option>
+<option value="---Municipios del Distrito Capital -">---Municipios del Distrito Capital -</option>
+<option value="Libertador - Caracas">Libertador - Caracas</option>
+<option value="----Municipios del Estado Amazonas -">----Municipios del Estado Amazonas -</option>
+<option value="Alto Orinoco - La Esmeralda">Alto Orinoco - La Esmeralda</option>
+<option value="Atabapo - San Fernando de Atabapo">Atabapo - San Fernando de Atabapo</option>
+<option value="Atures - Puerto Ayacucho">Atures - Puerto Ayacucho</option>
+<option value="Autana - Isla Ratón">Autana - Isla Ratón</option>
+<option value="Manapiare - San Juan de Manapiare">Manapiare - San Juan de Manapiare</option>
+<option value="Maroa - Maroa">Maroa - Maroa</option>
+<option value="Río Negro - San Carlos de Río Negro">Río Negro - San Carlos de Río Negro</option>
+<option value="---Municipios del Estado Anzoátegui -">---Municipios del Estado Anzoátegui -</option>
+<option value="Anaco - Anaco">Anaco - Anaco</option>
+<option value="Aragua - Aragua de Barcelona">Aragua - Aragua de Barcelona</option>
+<option value="Bruzual - Clarines">Bruzual - Clarines</option>
+<option value="Diego Bautista Urbaneja - Lechería">Diego Bautista Urbaneja - Lechería</option>
+<option value="Peñalver - Puerto Píritu">Peñalver - Puerto Píritu</option>
+<option value="Francisco del Carmen Carvajal - Valle de Guanape">Francisco del Carmen Carvajal - Valle de Guanape</option>
+<option value="General Sir Arthur McGregor - El Chaparro">General Sir Arthur McGregor - El Chaparro</option>
+<option value="Guanta - Guanta">Guanta - Guanta</option>
+<option value="Independencia - Soledad">Independencia - Soledad</option>
+<option value="José Gregorio Monagas Monagas - Mapire">José Gregorio Monagas Monagas - Mapire</option>
+<option value="Juan Antonio Sotillo - Puerto La Cruz">Juan Antonio Sotillo - Puerto La Cruz</option>
+<option value="Juan Manuel Cajigal - Onoto">Juan Manuel Cajigal - Onoto</option>
+<option value="Libertad - San Mateo">Libertad - San Mateo</option>
+<option value="Francisco de Miranda - Pariaguán">Francisco de Miranda - Pariaguán</option>
+<option value="Pedro María Freites - Cantaura">Pedro María Freites - Cantaura</option>
+<option value="Píritu - Píritu">Píritu - Píritu</option>
+<option value="San José de Guanipa - San José de Guanipa">San José de Guanipa - San José de Guanipa</option>
+<option value="San Juan de Capistrano - Boca de Uchire">San Juan de Capistrano - Boca de Uchire</option>
+<option value="Santa Ana - Santa Ana">Santa Ana - Santa Ana</option>
+<option value="Simón Bolívar - Barcelona">Simón Bolívar - Barcelona</option>
+<option value="Simón Rodríguez - El Tigre">Simón Rodríguez - El Tigre</option>
+<option value="---Municipios del Estado Apure -">---Municipios del Estado Apure -</option>
+<option value="Achaguas - Achaguas">Achaguas - Achaguas</option>
+<option value="Biruaca - Biruaca">Biruaca - Biruaca</option>
+<option value="Muñoz - Bruzual">Muñoz - Bruzual</option>
+<option value="Páez - Guasdualito">Páez - Guasdualito</option>
+<option value="Pedro Camejo - San Juan de Payara">Pedro Camejo - San Juan de Payara</option>
+<option value="Rómulo Gallegos - Elorza">Rómulo Gallegos - Elorza</option>
+<option value="San Fernando - San Fernando de Apure">San Fernando - San Fernando de Apure</option>
+<option value="---Municipios del Estado Aragua -">---Municipios del Estado Aragua -</option>
+<option value="Atanasio Girardot - Maracay">Atanasio Girardot - Maracay</option>
+<option value="Bolívar - San Mateo">Bolívar - San Mateo</option>
+<option value="Camatagua - Camatagua">Camatagua - Camatagua</option>
+<option value="Francisco Linares Alcántara - Santa Rita">Francisco Linares Alcántara - Santa Rita</option>
+<option value="José Ángel Lamas - Santa Cruz de Aragua">José Ángel Lamas - Santa Cruz de Aragua</option>
+<option value="José Félix Ribas - La Victoria">José Félix Ribas - La Victoria</option>
+<option value="José Rafael Revenga - El Consejo">José Rafael Revenga - El Consejo</option>
+<option value="Libertador - Palo Negro">Libertador - Palo Negro</option>
+<option value="Mario Briceño Iragorry - El Limón">Mario Briceño Iragorry - El Limón</option>
+<option value="Ocumare de la Costa de Oro - Ocumare de la Costa">Ocumare de la Costa de Oro - Ocumare de la Costa</option>
+<option value="San Casimiro - San Casimiro">San Casimiro - San Casimiro</option>
+<option value="San Sebastián - San Sebastián de Los Reyes (Venezuela)">San Sebastián - San Sebastián de Los Reyes (Venezuela)</option>
+<option value="Santiago Mariño - Turmero">Santiago Mariño - Turmero</option>
+<option value="Santos Michelena - Las Tejerías">Santos Michelena - Las Tejerías</option>
+<option value="Sucre - Cagua">Sucre - Cagua</option>
+<option value="Tovar - Colonia Tovar">Tovar - Colonia Tovar</option>
+<option value="Urdaneta - Barbacoas">Urdaneta - Barbacoas</option>
+<option value="Zamora - Villa de Cura">Zamora - Villa de Cura</option>
+<option value="---Municipios del Estado Barinas -">---Municipios del Estado Barinas -</option>
+<option value="Alberto Arvelo Torrealba - Sabaneta">Alberto Arvelo Torrealba - Sabaneta</option>
+<option value="Andrés Eloy Blanco - El Cantón">Andrés Eloy Blanco - El Cantón</option>
+<option value="Antonio José de Sucre - Socopó">Antonio José de Sucre - Socopó</option>
+<option value="Arismendi - Arismendi">Arismendi - Arismendi</option>
+<option value="Barinas - Barinas">Barinas - Barinas</option>
+<option value="Bolívar - Barinitas">Bolívar - Barinitas</option>
+<option value="Cruz Paredes - Barrancas">Cruz Paredes - Barrancas</option>
+<option value="Ezequiel Zamora - Santa Bárbara">Ezequiel Zamora - Santa Bárbara</option>
+<option value="Obispos - Obispos">Obispos - Obispos</option>
+<option value="Pedraza - Ciudad Bolivia">Pedraza - Ciudad Bolivia</option>
+<option value="Rojas - Libertad">Rojas - Libertad</option>
+<option value="Sosa - Ciudad de Nutrias">Sosa - Ciudad de Nutrias</option>
+<option value="---Municipios del Estado Bolívar -">---Municipios del Estado Bolívar -</option>
+<option value="Caroní - Ciudad Guayana">Caroní - Ciudad Guayana</option>
+<option value="Cedeño - Caicara del Orinoco">Cedeño - Caicara del Orinoco</option>
+<option value="El Callao - El Callao">El Callao - El Callao</option>
+<option value="Gran Sabana - Santa Elena de Uairén">Gran Sabana - Santa Elena de Uairén</option>
+<option value="Heres - Ciudad Bolívar">Heres - Ciudad Bolívar</option>
+<option value="Piar - Upata">Piar - Upata</option>
+<option value="Angostura antes Raúl Leoni - Ciudad Piar">Angostura antes Raúl Leoni - Ciudad Piar</option>
+<option value="Roscio - Guasipati">Roscio - Guasipati</option>
+<option value="Sifontes - El Dorado">Sifontes - El Dorado</option>
+<option value="Sucre - Maripa">Sucre - Maripa</option>
+<option value="Padre Pedro Chien - El Palmar">Padre Pedro Chien - El Palmar</option>
+<option value="---Municipios del Estado Carabobo -">---Municipios del Estado Carabobo -</option>
+<option value="Bejuma - Bejuma">Bejuma - Bejuma</option>
+<option value="Carlos Arvelo - Güigüe">Carlos Arvelo - Güigüe</option>
+<option value="Diego Ibarra - Mariara">Diego Ibarra - Mariara</option>
+<option value="Guacara - Guacara">Guacara - Guacara</option>
+<option value="Juan José Mora - Morón">Juan José Mora - Morón</option>
+<option value="Libertador - Tocuyito">Libertador - Tocuyito</option>
+<option value="Los Guayos - Los Guayos">Los Guayos - Los Guayos</option>
+<option value="Miranda - Miranda">Miranda - Miranda</option>
+<option value="Montalbán - Montalbán">Montalbán - Montalbán</option>
+<option value="Naguanagua- Naguanagua">Naguanagua- Naguanagua</option>
+<option value="Puerto Cabello - Puerto Cabello">Puerto Cabello - Puerto Cabello</option>
+<option value="San Diego - San Diego">San Diego - San Diego</option>
+<option value="San Joaquín - San Joaquín">San Joaquín - San Joaquín</option>
+<option value="Valencia - Valencia">Valencia - Valencia</option>
+<option value="---Municipios del Estado Cojedes -">---Municipios del Estado Cojedes -</option>
+<option value="Anzoátegui - Cojedes">Anzoátegui - Cojedes</option>
+<option value="Tinaquillo - Tinaquillo">Tinaquillo - Tinaquillo</option>
+<option value="Girardot - El Baúl">Girardot - El Baúl</option>
+<option value="Lima Blanco - Macapo">Lima Blanco - Macapo</option>
+<option value="Pao de San Juan Bautista - El Pao">Pao de San Juan Bautista - El Pao</option>
+<option value="Ricaurte - Libertad">Ricaurte - Libertad</option>
+<option value="Rómulo Gallegos - Las Vegas">Rómulo Gallegos - Las Vegas</option>
+<option value="San Carlos - San Carlos">San Carlos - San Carlos</option>
+<option value="Tinaco - Tinaco">Tinaco - Tinaco</option>
+<option value="---Municipios del Estado Delta Amacuro -">---Municipios del Estado Delta Amacuro -</option>
+<option value="Antonio Díaz - Curiapo">Antonio Díaz - Curiapo</option>
+<option value="Casacoima - Sierra Imataca">Casacoima - Sierra Imataca</option>
+<option value="Pedernales - Pedernales">Pedernales - Pedernales</option>
+<option value="Tucupita - Tucupita">Tucupita - Tucupita</option>
+<option value="---Municipios del Estado Falcón -">---Municipios del Estado Falcón -</option>
+<option value="Acosta - San Juan de los Cayos">Acosta - San Juan de los Cayos</option>
+<option value="Bolívar - San Luis">Bolívar - San Luis</option>
+<option value="Buchivacoa - Capatárida">Buchivacoa - Capatárida</option>
+<option value="Cacique Manaure - Yaracal">Cacique Manaure - Yaracal</option>
+<option value="Carirubana - Punto Fijo">Carirubana - Punto Fijo</option>
+<option value="Colina - La Vela de Coro">Colina - La Vela de Coro</option>
+<option value="Dabajuro - Dabajuro">Dabajuro - Dabajuro</option>
+<option value="Democracia - Pedregal">Democracia - Pedregal</option>
+<option value="Falcón - Pueblo Nuevo">Falcón - Pueblo Nuevo</option>
+<option value="Federación - Churuguara">Federación - Churuguara</option>
+<option value="Jacura - Jacura">Jacura - Jacura</option>
+<option value="José Laurencio Silva - Tucacas">José Laurencio Silva - Tucacas</option>
+<option value="Los Taques - Santa Cruz de Los Taques">Los Taques - Santa Cruz de Los Taques</option>
+<option value="Mauroa - Mene de Mauroa">Mauroa - Mene de Mauroa</option>
+<option value="Miranda - Santa Ana de Coro">Miranda - Santa Ana de Coro</option>
+<option value="Monseñor Iturriza - Chichiriviche">Monseñor Iturriza - Chichiriviche</option>
+<option value="Palmasola - Palmasola">Palmasola - Palmasola</option>
+<option value="Petit - Cabure">Petit - Cabure</option>
+<option value="Píritu - Píritu">Píritu - Píritu</option>
+<option value="San Francisco - Mirimire">San Francisco - Mirimire</option>
+<option value="Sucre - La Cruz de Taratara">Sucre - La Cruz de Taratara</option>
+<option value="Tocópero - Tocópero">Tocópero - Tocópero</option>
+<option value="Unión - Santa Cruz de Bucaral">Unión - Santa Cruz de Bucaral</option>
+<option value="Urumaco - Urumaco">Urumaco - Urumaco</option>
+<option value="Zamora - Puerto Cumarebo">Zamora - Puerto Cumarebo</option>
+<option value="---Municipios del Estado Guárico -">---Municipios del Estado Guárico -</option>
+<option value="Camaguán - Camaguán).">Camaguán - Camaguán).</option>
+<option value="Chaguaramas - Chaguaramas">Chaguaramas - Chaguaramas</option>
+<option value="El Socorro - El Socorro">El Socorro - El Socorro</option>
+<option value="José Félix Ribas - Tucupido">José Félix Ribas - Tucupido</option>
+<option value="José Tadeo Monagas - Altagracia de Orituco).">José Tadeo Monagas - Altagracia de Orituco).</option>
+<option value="Juan Germán Roscio - San Juan de Los Morros">Juan Germán Roscio - San Juan de Los Morros</option>
+<option value="Julián Mellado - El Sombrero">Julián Mellado - El Sombrero</option>
+<option value="Las Mercedes - Las Mercedes">Las Mercedes - Las Mercedes</option>
+<option value="Leonardo Infante - Valle de La Pascua">Leonardo Infante - Valle de La Pascua</option>
+<option value="Pedro Zaraza - Zaraza).">Pedro Zaraza - Zaraza).</option>
+<option value="Ortiz - Ortiz">Ortiz - Ortiz</option>
+<option value="San Gerónimo de Guayabal - Guayabal">San Gerónimo de Guayabal - Guayabal</option>
+<option value="San José de Guaribe - San José de Guaribe">San José de Guaribe - San José de Guaribe</option>
+<option value="Santa María de Ipire - Santa María de Ipire">Santa María de Ipire - Santa María de Ipire</option>
+<option value="Sebastián Francisco de Miranda - Calabozo">Sebastián Francisco de Miranda - Calabozo</option>
+<option value="---Municipios del Estado Lara -">---Municipios del Estado Lara -</option>
+<option value="Andrés Eloy Blanco - Sanare">Andrés Eloy Blanco - Sanare</option>
+<option value="Crespo - Duaca">Crespo - Duaca</option>
+<option value="Iribarren - Barquisimeto">Iribarren - Barquisimeto</option>
+<option value="Jiménez - Quibor">Jiménez - Quibor</option>
+<option value="Morán - El Tocuyo">Morán - El Tocuyo</option>
+<option value="Palavecino - Cabudare">Palavecino - Cabudare</option>
+<option value="Simón Planas - Sarare">Simón Planas - Sarare</option>
+<option value="Torres - Carora">Torres - Carora</option>
+<option value="Urdaneta - Siquisique">Urdaneta - Siquisique</option>
+<option value="---Municipios del Estado Mérida -">---Municipios del Estado Mérida -</option>
+<option value="Alberto Adriani - El Vigía">Alberto Adriani - El Vigía</option>
+<option value="Andrés Bello - La Azulita">Andrés Bello - La Azulita</option>
+<option value="Antonio Pinto Salinas - Santa Cruz de Mora">Antonio Pinto Salinas - Santa Cruz de Mora</option>
+<option value="Aricagua - Aricagua">Aricagua - Aricagua</option>
+<option value="Arzobispo Chacón - Canaguá">Arzobispo Chacón - Canaguá</option>
+<option value="Campo Elías - Ejido">Campo Elías - Ejido</option>
+<option value="Caracciolo Parra Olmedo - Tucaní">Caracciolo Parra Olmedo - Tucaní</option>
+<option value="Cardenal Quintero - Santo Domingo">Cardenal Quintero - Santo Domingo</option>
+<option value="Guaraque - Guaraque">Guaraque - Guaraque</option>
+<option value="Julio César Salas - Arapuey">Julio César Salas - Arapuey</option>
+<option value="Justo Briceño - Torondoy">Justo Briceño - Torondoy</option>
+<option value="Libertador - Mérida">Libertador - Mérida</option>
+<option value="Miranda - Timotes">Miranda - Timotes</option>
+<option value="Obispo Ramos de Lora - Santa Elena de Arenales">Obispo Ramos de Lora - Santa Elena de Arenales</option>
+<option value="Padre Noguera - Santa María de Caparo">Padre Noguera - Santa María de Caparo</option>
+<option value="Pueblo Llano - Pueblo Llano">Pueblo Llano - Pueblo Llano</option>
+<option value="Rangel - Mucuchíes">Rangel - Mucuchíes</option>
+<option value="Rivas Dávila - Bailadores">Rivas Dávila - Bailadores</option>
+<option value="Santos Marquina - Tabay">Santos Marquina - Tabay</option>
+<option value="Sucre - Lagunillas">Sucre - Lagunillas</option>
+<option value="Tovar - Tovar">Tovar - Tovar</option>
+<option value="Tulio Febres Cordero - Nueva Bolivia">Tulio Febres Cordero - Nueva Bolivia</option>
+<option value="Zea - Zea">Zea - Zea</option>
+<option value="---Municipios del Estado Miranda -">---Municipios del Estado Miranda -</option>
+<option value="Acevedo - Caucagua">Acevedo - Caucagua</option>
+<option value="Andrés Bello - San José de Barlovento">Andrés Bello - San José de Barlovento</option>
+<option value="Baruta - Baruta">Baruta - Baruta</option>
+<option value="Brión - Higuerote">Brión - Higuerote</option>
+<option value="Buroz - Mamporal">Buroz - Mamporal</option>
+<option value="Carrizal - Carrizal">Carrizal - Carrizal</option>
+<option value="Chacao - Chacao">Chacao - Chacao</option>
+<option value="Cristóbal Rojas - Charallave">Cristóbal Rojas - Charallave</option>
+<option value="El Hatillo - Santa Rosalía de Palermo">El Hatillo - Santa Rosalía de Palermo</option>
+<option value="Guaicaipuro - Los Teques">Guaicaipuro - Los Teques</option>
+<option value="Independencia - Santa Teresa del Tuy">Independencia - Santa Teresa del Tuy</option>
+<option value="Lander - Ocumare del Tuy">Lander - Ocumare del Tuy</option>
+<option value="Los Salias - San Antonio de los Altos">Los Salias - San Antonio de los Altos</option>
+<option value="Páez - Río Chico">Páez - Río Chico</option>
+<option value="Paz Castillo - Santa Lucía">Paz Castillo - Santa Lucía</option>
+<option value="Pedro Gual - Cúpira">Pedro Gual - Cúpira</option>
+<option value="Plaza - Guarenas">Plaza - Guarenas</option>
+<option value="Simón Bolívar - San Francisco de Yare">Simón Bolívar - San Francisco de Yare</option>
+<option value="Sucre - Petare">Sucre - Petare</option>
+<option value="Urdaneta - Cúa">Urdaneta - Cúa</option>
+<option value="Zamora - Guatire">Zamora - Guatire</option>
+<option value="---Municipios del Estado Monagas -">---Municipios del Estado Monagas -</option>
+<option value="Acosta - San Antonio de Capayacuar">Acosta - San Antonio de Capayacuar</option>
+<option value="Aguasay - Aguasay">Aguasay - Aguasay</option>
+<option value="Bolívar - Caripito">Bolívar - Caripito</option>
+<option value="Caripe - Caripe">Caripe - Caripe</option>
+<option value="Cedeño - Caicara de Maturín">Cedeño - Caicara de Maturín</option>
+<option value="Ezequiel Zamora - Punta de Mata">Ezequiel Zamora - Punta de Mata</option>
+<option value="Libertador - Temblador">Libertador - Temblador</option>
+<option value="Maturín - Maturín">Maturín - Maturín</option>
+<option value="Piar - Aragua de Maturín">Piar - Aragua de Maturín</option>
+<option value="Punceres - Quiriquire">Punceres - Quiriquire</option>
+<option value="Santa Bárbara - Santa Bárbara">Santa Bárbara - Santa Bárbara</option>
+<option value="Sotillo - Barrancas del Orinoco">Sotillo - Barrancas del Orinoco</option>
+<option value="Uracoa - Uracoa">Uracoa - Uracoa</option>
+<option value="---Municipios del Estado Nueva Esparta -">---Municipios del Estado Nueva Esparta -</option>
+<option value="Antolín del Campo - La Plaza de Paraguachí">Antolín del Campo - La Plaza de Paraguachí</option>
+<option value="Arismendi - La Asunción">Arismendi - La Asunción</option>
+<option value="Díaz - San Juan Bautista">Díaz - San Juan Bautista</option>
+<option value="García - El Valle del Espíritu Santo">García - El Valle del Espíritu Santo</option>
+<option value="Gómez - Santa Ana">Gómez - Santa Ana</option>
+<option value="Maneiro - Pampatar">Maneiro - Pampatar</option>
+<option value="Marcano - Juan Griego">Marcano - Juan Griego</option>
+<option value="Mariño - Porlamar">Mariño - Porlamar</option>
+<option value="Península de Macanao - Boca de Río">Península de Macanao - Boca de Río</option>
+<option value="Tubores - Punta de Piedras">Tubores - Punta de Piedras</option>
+<option value="Villalba - San Pedro de Coche">Villalba - San Pedro de Coche</option>
+<option value="---Municipios del Estado Portuguesa -">---Municipios del Estado Portuguesa -</option>
+<option value="Agua Blanca - Agua Blanca">Agua Blanca - Agua Blanca</option>
+<option value="Araure - Araure">Araure - Araure</option>
+<option value="Esteller - Píritu">Esteller - Píritu</option>
+<option value="Guanare - Guanare">Guanare - Guanare</option>
+<option value="Guanarito - Guanarito">Guanarito - Guanarito</option>
+<option value="Monseñor José Vicente de Unda - Paraíso de Chabasquén">Monseñor José Vicente de Unda - Paraíso de Chabasquén</option>
+<option value="Ospino - Ospino">Ospino - Ospino</option>
+<option value="Páez - Acarigua">Páez - Acarigua</option>
+<option value="Papelón - Papelón">Papelón - Papelón</option>
+<option value="San Genaro de Boconoíto - Boconoíto">San Genaro de Boconoíto - Boconoíto</option>
+<option value="San Rafael de Onoto - San Rafael de Onoto">San Rafael de Onoto - San Rafael de Onoto</option>
+</select>
+</div>
+
+<div class="clear"></div>
+
+<div id="q44" class="q required">
+<a class="item_anchor" name="ItemAnchor3"></a>
+<label class="question top_question" for="lstParroquias">Parroquia<b class="icon_required" style="color:#FF0000">*</b></label>
+<select id="lstParroquias" name="lstParroquias" class="drop_down">
+<option selected="selected"></option>
+<option value="---Parroquias de Distrito Capital">---Parroquias de DC</option>
+<option value="     Caracas">Caracas</option>
+<option value="---Parroquias de Amazonas">---Parroquias de Amazonas</option>
+<option value="    Alto Orinoco (La Esmeralda)">    Alto Orinoco (La Esmeralda)</option>
+<option value="    Atabapo (San Fernando de Atabapo)">    Atabapo (San Fernando de Atabapo)</option>
+<option value="    Atures (Puerto Ayacucho)">    Atures (Puerto Ayacucho)</option>
+<option value="    Autana (Isla Ratón)">    Autana (Isla Ratón)</option>
+<option value="    Manapiare (San Juan de Manapiare)">    Manapiare (San Juan de Manapiare)</option>
+<option value="    Maroa (Maroa)">    Maroa (Maroa)</option>
+<option value="    Río Negro (San Carlos de Río Negro)">    Río Negro (San Carlos de Río Negro)</option>
+<option value="---Parroquias de Anzoátegui">---Parroquias de Anzoátegui</option>
+<option value="    Anaco (Anaco)">    Anaco (Anaco)</option>
+<option value="    Aragua (Aragua de Barcelona)">    Aragua (Aragua de Barcelona)</option>
+<option value="    Diego Bautista Urbaneja (Lechería)">    Diego Bautista Urbaneja (Lechería)</option>
+<option value="    Fernando de Peñalver (Puerto Píritu)">    Fernando de Peñalver (Puerto Píritu)</option>
+<option value="    Francisco de Carmen Carvajal (Valle de Guanape)">    Francisco de Carmen Carvajal (Valle de Guanape)</option>
+<option value="    Francisco de Miranda (Pariaguán)">    Francisco de Miranda (Pariaguán)</option>
+<option value="    Guanta (Guanta)">    Guanta (Guanta)</option>
+<option value="    Independencia (Soledad)">    Independencia (Soledad)</option>
+<option value="    José Gregorio Monagas (Mapire)">    José Gregorio Monagas (Mapire)</option>
+<option value="    Juan Antonio Sotillo (Puerto la Cruz)">    Juan Antonio Sotillo (Puerto la Cruz)</option>
+<option value="    Juan Manuel Cajigal (Onoto)">    Juan Manuel Cajigal (Onoto)</option>
+<option value="    Libertad (San Mateo)">    Libertad (San Mateo)</option>
+<option value="    Manuel Ezequiel Bruzual (Clarines)">    Manuel Ezequiel Bruzual (Clarines)</option>
+<option value="    Pedro María Freites (Cantaura)">    Pedro María Freites (Cantaura)</option>
+<option value="    Píritu (Píritu)">    Píritu (Píritu)</option>
+<option value="    San José de Guanipa (San José de Guanipa / El Tigrito)">    San José de Guanipa (San José de Guanipa / El Tigrito)</option>
+<option value="    San Juan de Capistrano (Boca de Uchire)">    San Juan de Capistrano (Boca de Uchire)</option>
+<option value="    Santa Ana (Santa Ana)">    Santa Ana (Santa Ana)</option>
+<option value="    Simón Bolívar (Barcelona)">    Simón Bolívar (Barcelona)</option>
+<option value="    Simón Rodríguez (El Tigre)">    Simón Rodríguez (El Tigre)</option>
+<option value="    Sir Artur McGregor (El Chaparro)">    Sir Artur McGregor (El Chaparro)</option>
+<option value="---Parroquias de Apure">---Parroquias de Apure</option>
+<option value="    Achaguas (Achaguas)">    Achaguas (Achaguas)</option>
+<option value="    Biruaca (Biruaca)">    Biruaca (Biruaca)</option>
+<option value="    Muñoz (Bruzual)">    Muñoz (Bruzual)</option>
+<option value="    Páez (Guasdualito)">    Páez (Guasdualito)</option>
+<option value="    Pedro Camejo (San Juan de Payara)">    Pedro Camejo (San Juan de Payara)</option>
+<option value="    Rómulo Gallegos (Elorza)">    Rómulo Gallegos (Elorza)</option>
+<option value="    San Fernando (San Fernando de Apure)">    San Fernando (San Fernando de Apure)</option>
+<option value="---Parroquias de Aragua">---Parroquias de Aragua</option>
+<option value="    Bolívar (San Mateo)">    Bolívar (San Mateo)</option>
+<option value="    Camatagua (Camatagua)">    Camatagua (Camatagua)</option>
+<option value="    Francisco Linares Alcántara (Santa Rita)">    Francisco Linares Alcántara (Santa Rita)</option>
+<option value="    Girardot (Maracay)">    Girardot (Maracay)</option>
+<option value="    Municipio José Ángel Lamas (Santa Cruz)">    Municipio José Ángel Lamas (Santa Cruz)</option>
+<option value="    José Félix Ribas (La Victoria)">    José Félix Ribas (La Victoria)</option>
+<option value="    Municipio José Rafael Revenga (El Consejo)">    Municipio José Rafael Revenga (El Consejo)</option>
+<option value="    Libertador (Palo Negro)">    Libertador (Palo Negro)</option>
+<option value="    Mario Briceño Iragorry (El Limón)">    Mario Briceño Iragorry (El Limón)</option>
+<option value="    Municipio Ocumare de la Costa de Oro (Ocumare de la Costa)">    Municipio Ocumare de la Costa de Oro (Ocumare de la Costa)</option>
+<option value="    San Casimiro (San Casimiro)">    San Casimiro (San Casimiro)</option>
+<option value="    San Sebastián (San Sebastián)">    San Sebastián (San Sebastián)</option>
+<option value="    Santiago Mariño (Turmero)">    Santiago Mariño (Turmero)</option>
+<option value="    Santos Michelena (Las Tejerías)">    Santos Michelena (Las Tejerías)</option>
+<option value="    Sucre (Cagua)">    Sucre (Cagua)</option>
+<option value="    Tovar (Colonia Tovar)">    Tovar (Colonia Tovar)</option>
+<option value="    Urdaneta (Barbacoas)">    Urdaneta (Barbacoas)</option>
+<option value="    Zamora (Villa de Cura)">    Zamora (Villa de Cura)</option>
+<option value="---Parroquias de Barinas">---Parroquias de Barinas</option>
+<option value="    Alberto Arvelo Torrealba (Sabaneta)">    Alberto Arvelo Torrealba (Sabaneta)</option>
+<option value="    Andrés Eloy Blanco (El Cantón)">    Andrés Eloy Blanco (El Cantón)</option>
+<option value="    Antonio José de Sucre (Socopo)">    Antonio José de Sucre (Socopo)</option>
+<option value="    Arismendi (Arismendi)">    Arismendi (Arismendi)</option>
+<option value="    Barinas (Barinas)">    Barinas (Barinas)</option>
+<option value="    Bolívar (Barinitas)">    Bolívar (Barinitas)</option>
+<option value="    Cruz Paredes (Barrancas)">    Cruz Paredes (Barrancas)</option>
+<option value="    Ezequiel Zamora (Santa Bárbara)">    Ezequiel Zamora (Santa Bárbara)</option>
+<option value="    Obispos (Obispos)">    Obispos (Obispos)</option>
+<option value="    Pedraza (Ciudad Bolivia)">    Pedraza (Ciudad Bolivia)</option>
+<option value="    Rojas (Libertad)">    Rojas (Libertad)</option>
+<option value="    Sosa (Ciudad de Nutrias)">    Sosa (Ciudad de Nutrias)</option>
+<option value="---Parroquias de Bolívar">---Parroquias de Bolívar</option>
+<option value="    Municipio Caroní (Ciudad Guayana)">    Municipio Caroní (Ciudad Guayana)</option>
+<option value="    Municipio Cedeño (Caicara del Orinoco)">    Municipio Cedeño (Caicara del Orinoco)</option>
+<option value="    Municipio El Callao (El Callao)">    Municipio El Callao (El Callao)</option>
+<option value="    Municipio Gran Sabana (Santa Elena de Uairén)">    Municipio Gran Sabana (Santa Elena de Uairén)</option>
+<option value="    Municipio Heres (Ciudad Bolívar)">    Municipio Heres (Ciudad Bolívar)</option>
+<option value="    Municipio Padre Pedro Chien (El Palmar)">    Municipio Padre Pedro Chien (El Palmar)</option>
+<option value="    Municipio Piar (Upata)">    Municipio Piar (Upata)</option>
+<option value="    Municipio Raúl Leoni (Ciudad Piar)">    Municipio Raúl Leoni (Ciudad Piar)</option>
+<option value="    Municipio Roscio (Guasipati)">    Municipio Roscio (Guasipati)</option>
+<option value="    Municipio Sifontes (Tumeremo)">    Municipio Sifontes (Tumeremo)</option>
+<option value="    Municipio Sucre (Maripa)">    Municipio Sucre (Maripa)</option>
+<option value="---Parroquias de Carabobo">---Parroquias de Carabobo</option>
+<option value="    Municipio Bejuma (Bejuma)">    Municipio Bejuma (Bejuma)</option>
+<option value="    Municipio Carlos Arvelo (Güigüe)">    Municipio Carlos Arvelo (Güigüe)</option>
+<option value="    Municipio Diego Ibarra (Mariara)">    Municipio Diego Ibarra (Mariara)</option>
+<option value="    Municipio Guacara (Guacara)">    Municipio Guacara (Guacara)</option>
+<option value="    Municipio Juan José Mora (Morón)">    Municipio Juan José Mora (Morón)</option>
+<option value="    Municipio Libertador (Tocuyito)">    Municipio Libertador (Tocuyito)</option>
+<option value="    Municipio Los Guayos (Los Guayos)">    Municipio Los Guayos (Los Guayos)</option>
+<option value="    Municipio Miranda (Miranda)">    Municipio Miranda (Miranda)</option>
+<option value="    Municipio Montalbán (Montalbán)">    Municipio Montalbán (Montalbán)</option>
+<option value="    Municipio Naguanagua (Naguanagua)">    Municipio Naguanagua (Naguanagua)</option>
+<option value="    Municipio Puerto Cabello (Puerto Cabello)">    Municipio Puerto Cabello (Puerto Cabello)</option>
+<option value="    Municipio San Diego (San Diego)">    Municipio San Diego (San Diego)</option>
+<option value="    Municipio San Joaquín (San Joaquín)">    Municipio San Joaquín (San Joaquín)</option>
+<option value="    Municipio Valencia (Valencia)">    Municipio Valencia (Valencia)</option>
+<option value="---Parroquias de Cojedes">---Parroquias de Cojedes</option>
+<option value="    Municipio Anzoátegui (Cojedes)">    Municipio Anzoátegui (Cojedes)</option>
+<option value="    Municipio El Pao de San Juan Bautista (El Pao)">    Municipio El Pao de San Juan Bautista (El Pao)</option>
+<option value="    Municipio Falcón (Tinaquillo)">    Municipio Falcón (Tinaquillo)</option>
+<option value="    Municipio Girardot (El Baúl)">    Municipio Girardot (El Baúl)</option>
+<option value="    Municipio Lima Blanco (Macapo)">    Municipio Lima Blanco (Macapo)</option>
+<option value="    Municipio Ricaurte (Libertad)">    Municipio Ricaurte (Libertad)</option>
+<option value="    Municipio Rómulo Gallegos (Las Vegas)">    Municipio Rómulo Gallegos (Las Vegas)</option>
+<option value="    Municipio San Carlos de Austria (San Carlos)">    Municipio San Carlos de Austria (San Carlos)</option>
+<option value="    Municipio Tinaco (Tinaco)">    Municipio Tinaco (Tinaco)</option>
+<option value="---Parroquias de Delta Amacuro">---Parroquias de Delta Amacuro</option>
+<option value="    Municipio Antonio Díaz (Curiapo)">    Municipio Antonio Díaz (Curiapo)</option>
+<option value="    Municipio Casacoima (Sierra Imataca)">    Municipio Casacoima (Sierra Imataca)</option>
+<option value="    Municipio Pedernales (Pedernales)">    Municipio Pedernales (Pedernales)</option>
+<option value="    Municipio Tucupita (Tucupita)">    Municipio Tucupita (Tucupita)</option>
+<option value="---Parroquias de Falcón">---Parroquias de Falcón</option>
+<option value="    Municipio Acosta (San Juan de los Cayos)">    Municipio Acosta (San Juan de los Cayos)</option>
+<option value="    Municipio Bolívar (San Luis)">    Municipio Bolívar (San Luis)</option>
+<option value="    Municipio Buchivacoa (Capatárida)">    Municipio Buchivacoa (Capatárida)</option>
+<option value="    Municipio Cacique Manaure (Yaracal)">    Municipio Cacique Manaure (Yaracal)</option>
+<option value="    Municipio Carirubana (Punto Fijo)">    Municipio Carirubana (Punto Fijo)</option>
+<option value="    Municipio Colina (La Vela de Coro)">    Municipio Colina (La Vela de Coro)</option>
+<option value="    Municipio Dabajuro (Dabajuro)">    Municipio Dabajuro (Dabajuro)</option>
+<option value="    Municipio Democracia (Pedregal)">    Municipio Democracia (Pedregal)</option>
+<option value="    Municipio Falcón (Pueblo Nuevo)">    Municipio Falcón (Pueblo Nuevo)</option>
+<option value="    Municipio Federación (Churuguara)">    Municipio Federación (Churuguara)</option>
+<option value="    Municipio Jacura (Jacura)">    Municipio Jacura (Jacura)</option>
+<option value="    Municipio Los Taques (Santa Cruz de Los Taques)">    Municipio Los Taques (Santa Cruz de Los Taques)</option>
+<option value="    Municipio Mauroa (Mene de Mauroa)">    Municipio Mauroa (Mene de Mauroa)</option>
+<option value="    Municipio Miranda (Santa Ana de Coro)">    Municipio Miranda (Santa Ana de Coro)</option>
+<option value="    Municipio Monseñor Iturriza (Chichiriviche)">    Municipio Monseñor Iturriza (Chichiriviche)</option>
+<option value="    Municipio Palmasola (Palmasola)">    Municipio Palmasola (Palmasola)</option>
+<option value="    Municipio Petit (Cabure)">    Municipio Petit (Cabure)</option>
+<option value="    Municipio Píritu (Píritu)">    Municipio Píritu (Píritu)</option>
+<option value="    Municipio San Francisco (Mirimire)">    Municipio San Francisco (Mirimire)</option>
+<option value="    Municipio Silva (Tucacas)">    Municipio Silva (Tucacas)</option>
+<option value="    Municipio Sucre (La Cruz de Taratara)">    Municipio Sucre (La Cruz de Taratara)</option>
+<option value="    Municipio Tocópero (Tocópero)">    Municipio Tocópero (Tocópero)</option>
+<option value="    Municipio Unión (Santa Cruz de Bucaral)">    Municipio Unión (Santa Cruz de Bucaral)</option>
+<option value="    Municipio Urumaco (Urumaco)">    Municipio Urumaco (Urumaco)</option>
+<option value="    Municipio Zamora (Puerto Cumarebo)">    Municipio Zamora (Puerto Cumarebo)</option>
+<option value="---Parroquias de Guárico">---Parroquias de Guárico</option>
+<option value="    Municipio Camaguán (Camaguán)">    Municipio Camaguán (Camaguán)</option>
+<option value="    Municipio Chaguaramas (Chaguaramas)">    Municipio Chaguaramas (Chaguaramas)</option>
+<option value="    Municipio El Socorro (El Socorro)">    Municipio El Socorro (El Socorro)</option>
+<option value="    Municipio Francisco de Miranda (Calabozo)">    Municipio Francisco de Miranda (Calabozo)</option>
+<option value="    Municipio José Félix Ribas (Tucupido)">    Municipio José Félix Ribas (Tucupido)</option>
+<option value="    Municipio José Tadeo Monagas (Altagracia de Orituco)">    Municipio José Tadeo Monagas (Altagracia de Orituco)</option>
+<option value="    Municipio Juan Germán Roscio (San Juan de los Morros)">    Municipio Juan Germán Roscio (San Juan de los Morros)</option>
+<option value="    Municipio Julián Mellado (El Sombrero)">    Municipio Julián Mellado (El Sombrero)</option>
+<option value="    Municipio Las Mercedes (Las Mercedes)">    Municipio Las Mercedes (Las Mercedes)</option>
+<option value="    Municipio Leonardo Infante (Valle de la Pascua)">    Municipio Leonardo Infante (Valle de la Pascua)</option>
+<option value="    Municipio Ortiz (Ortiz)">    Municipio Ortiz (Ortiz)</option>
+<option value="    Municipio Pedro Zaraza (Zaraza)">    Municipio Pedro Zaraza (Zaraza)</option>
+<option value="    Municipio San Gerónimo de Guayabal (Guayabal)">    Municipio San Gerónimo de Guayabal (Guayabal)</option>
+<option value="    Municipio San José de Guaribe (San José de Guaribe)">    Municipio San José de Guaribe (San José de Guaribe)</option>
+<option value="    Municipio Santa María de Ipire (Santa María de Ipire)">    Municipio Santa María de Ipire (Santa María de Ipire)</option>
+<option value="---Parroquias de Lara">---Parroquias de Lara</option>
+<option value="    Andrés Eloy Blanco (Sanare)">    Andrés Eloy Blanco (Sanare)</option>
+<option value="    Crespo (Duaca)">    Crespo (Duaca)</option>
+<option value="    Iribarren (Barquisimeto)">    Iribarren (Barquisimeto)</option>
+<option value="    Jiménez (Quíbor)">    Jiménez (Quíbor)</option>
+<option value="    Morán (El Tocuyo)">    Morán (El Tocuyo)</option>
+<option value="    Palavecino (Cabudare)">    Palavecino (Cabudare)</option>
+<option value="    Simón Planas (Sarare)">    Simón Planas (Sarare)</option>
+<option value="    Torres (Carora)">    Torres (Carora)</option>
+<option value="    Urdaneta (Siquisique)">    Urdaneta (Siquisique)</option>
+<option value="---Parroquias de Mérida">---Parroquias de Mérida</option>
+<option value="    Alberto Adriani (El Vigía)">    Alberto Adriani (El Vigía)</option>
+<option value="    Andrés Bello (La Azulita)">    Andrés Bello (La Azulita)</option>
+<option value="    Antonio Pinto Salinas (Santa Cruz de Mora)">    Antonio Pinto Salinas (Santa Cruz de Mora)</option>
+<option value="    Aricagua (Aricagua)">    Aricagua (Aricagua)</option>
+<option value="    Arzobispo Chacón (Canagua)">    Arzobispo Chacón (Canagua)</option>
+<option value="    Campo Elías (Ejido)">    Campo Elías (Ejido)</option>
+<option value="    Caracciolo Parra Olmedo (Tucani)">    Caracciolo Parra Olmedo (Tucani)</option>
+<option value="    Cardenal Quintero (Santo Domingo)">    Cardenal Quintero (Santo Domingo)</option>
+<option value="    Guaraque (Guaraque)">    Guaraque (Guaraque)</option>
+<option value="    Julio César Salas (Arapuey)">    Julio César Salas (Arapuey)</option>
+<option value="    Justo Briceño (Torondoy)">    Justo Briceño (Torondoy)</option>
+<option value="    Libertador (Mérida)">    Libertador (Mérida)</option>
+<option value="    Miranda (Timotes)">    Miranda (Timotes)</option>
+<option value="    Obispo Ramos de Lora (Santa Elena de Arenales)">    Obispo Ramos de Lora (Santa Elena de Arenales)</option>
+<option value="    Padre Noguera (Santa María de Caparo)">    Padre Noguera (Santa María de Caparo)</option>
+<option value="    Pueblo Llano (Pueblo Llano)">    Pueblo Llano (Pueblo Llano)</option>
+<option value="    Rangel (Mucuchíes)">    Rangel (Mucuchíes)</option>
+<option value="    Rivas Dávila (Bailadores)">    Rivas Dávila (Bailadores)</option>
+<option value="    Santos Marquina (Tabay)">    Santos Marquina (Tabay)</option>
+<option value="    Sucre (Lagunillas)">    Sucre (Lagunillas)</option>
+<option value="    Tovar (Tovar)">    Tovar (Tovar)</option>
+<option value="    Tulio Febres Cordero (Nueva Bolivia)">    Tulio Febres Cordero (Nueva Bolivia)</option>
+<option value="    Zea (Zea)">    Zea (Zea)</option>
+<option value="---Parroquias de Miranda">---Parroquias de Miranda</option>
+<option value="    Acevedo (Caucagua)">    Acevedo (Caucagua)</option>
+<option value="    Andrés Bello (San José de Barlovento)">    Andrés Bello (San José de Barlovento)</option>
+<option value="    Baruta (Nuestra Señora del Rosario de Baruta)">    Baruta (Nuestra Señora del Rosario de Baruta)</option>
+<option value="    Brión (Higuerote)">    Brión (Higuerote)</option>
+<option value="    Buroz (Mamporal)">    Buroz (Mamporal)</option>
+<option value="    Carrizal (Carrizal)">    Carrizal (Carrizal)</option>
+<option value="    Chacao (Chacao)">    Chacao (Chacao)</option>
+<option value="    Cristóbal Rojas (Charallave)">    Cristóbal Rojas (Charallave)</option>
+<option value="    El Hatillo (El Hatillo)">    El Hatillo (El Hatillo)</option>
+<option value="    Guaicaipuro (Los Teques)">    Guaicaipuro (Los Teques)</option>
+<option value="    Independencia (Santa Teresa del Tuy)">    Independencia (Santa Teresa del Tuy)</option>
+<option value="    Lander (Ocumare del Tuy)">    Lander (Ocumare del Tuy)</option>
+<option value="    Los Salias (San Antonio de los Altos)">    Los Salias (San Antonio de los Altos)</option>
+<option value="    Páez (Río Chico)">    Páez (Río Chico)</option>
+<option value="    Paz Castillo (Santa Lucía)">    Paz Castillo (Santa Lucía)</option>
+<option value="    Pedro Gual (Cúpira)">    Pedro Gual (Cúpira)</option>
+<option value="    Plaza (Guarenas)">    Plaza (Guarenas)</option>
+<option value="    Simón Bolívar (San Francisco de Yare)">    Simón Bolívar (San Francisco de Yare)</option>
+<option value="    Sucre (Petare)">    Sucre (Petare)</option>
+<option value="    Urdaneta (Cúa)">    Urdaneta (Cúa)</option>
+<option value="    Zamora (Guatire)">    Zamora (Guatire)</option>
+<option value="---Parroquias de Monagas">---Parroquias de Monagas</option>
+<option value="    Acosta (San Antonio)">    Acosta (San Antonio)</option>
+<option value="    Aguasay (Aguasay)">    Aguasay (Aguasay)</option>
+<option value="    Bolívar (Caripito)">    Bolívar (Caripito)</option>
+<option value="    Caripe (Caripe)">    Caripe (Caripe)</option>
+<option value="    Cedeño (Caicara)">    Cedeño (Caicara)</option>
+<option value="    Ezequiel Zamora (Punta de Mata)">    Ezequiel Zamora (Punta de Mata)</option>
+<option value="    Libertador (Temblador)">    Libertador (Temblador)</option>
+<option value="    Maturín (Maturín)">    Maturín (Maturín)</option>
+<option value="    Municipio Piar (Aragua de Maturín)">    Municipio Piar (Aragua de Maturín)</option>
+<option value="    Punceres (Quiriquire)">    Punceres (Quiriquire)</option>
+<option value="    Santa Bárbara (Santa Bárbara)">    Santa Bárbara (Santa Bárbara)</option>
+<option value="    Sotillo (Barrancas)">    Sotillo (Barrancas)</option>
+<option value="    Uracoa (Uracoa)">    Uracoa (Uracoa)</option>
+<option value="---Parroquias de Nueva Esparta">---Parroquias de Nueva Esparta</option>
+<option value="    Municipio Antolín del Campo (Plaza Paraguachi)">    Municipio Antolín del Campo (Plaza Paraguachi)</option>
+<option value="    Municipio Arismendi (La Asunción)">    Municipio Arismendi (La Asunción)</option>
+<option value="    Municipio Díaz (San Juan Bautista)">    Municipio Díaz (San Juan Bautista)</option>
+<option value="    Municipio García (El Valle del Espíritu Santo)">    Municipio García (El Valle del Espíritu Santo)</option>
+<option value="    Municipio Gómez (Santa Ana)">    Municipio Gómez (Santa Ana)</option>
+<option value="    Municipio Maneiro (Pampatar)">    Municipio Maneiro (Pampatar)</option>
+<option value="    Municipio Marcano (Juan Griego)">    Municipio Marcano (Juan Griego)</option>
+<option value="    Municipio Mariño (Porlamar)">    Municipio Mariño (Porlamar)</option>
+<option value="    Municipio Península de Macanao (Boca del Río)">    Municipio Península de Macanao (Boca del Río)</option>
+<option value="    Municipio Tubores (Punta de Piedras)">    Municipio Tubores (Punta de Piedras)</option>
+<option value="    Municipio Villalba (San Pedro de Coche)">    Municipio Villalba (San Pedro de Coche)</option>
+<option value="---Parroquias de Portuguesa">---Parroquias de Portuguesa</option>
+<option value="    Municipio Agua Blanca (Agua Blanca)">    Municipio Agua Blanca (Agua Blanca)</option>
+<option value="    Municipio Araure (Araure)">    Municipio Araure (Araure)</option>
+<option value="    Municipio Esteller (Píritu)">    Municipio Esteller (Píritu)</option>
+<option value="    Municipio Guanare (Guanare)">    Municipio Guanare (Guanare)</option>
+<option value="    Municipio Guanarito (Guanarito)">    Municipio Guanarito (Guanarito)</option>
+<option value="    Municipio Monseñor José Vicente de Unda (Paraíso de Chabasquén)">    Municipio Monseñor José Vicente de Unda (Paraíso de Chabasquén)</option>
+<option value="    Municipio Ospino (Ospino)">    Municipio Ospino (Ospino)</option>
+<option value="    Municipio Páez (Acarigua)">    Municipio Páez (Acarigua)</option>
+<option value="    Municipio Papelón (Papelón)">    Municipio Papelón (Papelón)</option>
+<option value="    Municipio San Genaro de Boconoito (Boconoito)">    Municipio San Genaro de Boconoito (Boconoito)</option>
+<option value="    Municipio San Rafael de Onoto (San Rafael de Onoto)">    Municipio San Rafael de Onoto (San Rafael de Onoto)</option>
+<option value="    Municipio Santa Rosalía (El Playón)">    Municipio Santa Rosalía (El Playón)</option>
+<option value="    Municipio Sucre (Biscucuy)">    Municipio Sucre (Biscucuy)</option>
+<option value="    Municipio Turén (Villa Bruzual)">    Municipio Turén (Villa Bruzual)</option>
+<option value="---Parroquias de Sucre">---Parroquias de Sucre</option>
+<option value="    Municipio Andrés Eloy Blanco (Casanay)">    Municipio Andrés Eloy Blanco (Casanay)</option>
+<option value="    Municipio Andrés Mata (San José de Aerocuar)">    Municipio Andrés Mata (San José de Aerocuar)</option>
+<option value="    Municipio Arismendi (Río Caribe)">    Municipio Arismendi (Río Caribe)</option>
+<option value="    Municipio Benítez (El Pilar)">    Municipio Benítez (El Pilar)</option>
+<option value="    Municipio Bermúdez (Carúpano)">    Municipio Bermúdez (Carúpano)</option>
+<option value="    Municipio Bolívar (Marigüitar)">    Municipio Bolívar (Marigüitar)</option>
+<option value="    Municipio Cajigal (Yaguaraparo)">    Municipio Cajigal (Yaguaraparo)</option>
+<option value="    Municipio Cruz Salmerón Acosta (Araya)">    Municipio Cruz Salmerón Acosta (Araya)</option>
+<option value="    Municipio Libertador (Tunapuy)">    Municipio Libertador (Tunapuy)</option>
+<option value="    Municipio Mariño (Irapa)">    Municipio Mariño (Irapa)</option>
+<option value="    Municipio Mejía (San Antonio del Golfo)">    Municipio Mejía (San Antonio del Golfo)</option>
+<option value="    Municipio Montes (Cumanacoa)">    Municipio Montes (Cumanacoa)</option>
+<option value="    Municipio Ribero (Cariaco)">    Municipio Ribero (Cariaco)</option>
+<option value="    Municipio Sucre (Cumaná)">    Municipio Sucre (Cumaná)</option>
+<option value="    Municipio Valdez (Güiria)">    Municipio Valdez (Güiria)</option>
+<option value="---Parroquias de Táchira">---Parroquias de Táchira</option>
+<option value="    Municipio Andrés Bello (Cordero)">    Municipio Andrés Bello (Cordero)</option>
+<option value="    Municipio Antonio Rómulo Costa (Las Mesas)">    Municipio Antonio Rómulo Costa (Las Mesas)</option>
+<option value="    Municipio Ayacucho (Colón)">    Municipio Ayacucho (Colón)</option>
+<option value="    Municipio Bolívar (San Antonio del Táchira)">    Municipio Bolívar (San Antonio del Táchira)</option>
+<option value="    Municipio Cárdenas (Táriba)">    Municipio Cárdenas (Táriba)</option>
+<option value="    Municipio Córdoba (Santa Ana del Táchira)">    Municipio Córdoba (Santa Ana del Táchira)</option>
+<option value="    Municipio Fernández Feo (San Rafael del Piñal)">    Municipio Fernández Feo (San Rafael del Piñal)</option>
+<option value="    Municipio Francisco de Miranda (San Jose de Bolívar)">    Municipio Francisco de Miranda (San Jose de Bolívar)</option>
+<option value="    Municipio García de Hevia (La Fría)">    Municipio García de Hevia (La Fría)</option>
+<option value="    Municipio Guasimos (Palmira)">    Municipio Guasimos (Palmira)</option>
+<option value="    Municipio Independencia (Capacho Nuevo)">    Municipio Independencia (Capacho Nuevo)</option>
+<option value="    Municipio Jáuregui (La Grita)">    Municipio Jáuregui (La Grita)</option>
+<option value="    Municipio Jose María Vargas (El Cobre)">    Municipio Jose María Vargas (El Cobre)</option>
+<option value="    Municipio Junín (Rubio)">    Municipio Junín (Rubio)</option>
+<option value="    Municipio Libertad (Capacho Viejo)">    Municipio Libertad (Capacho Viejo)</option>
+<option value="    Municipio Libertador (Abejales)">    Municipio Libertador (Abejales)</option>
+<option value="    Municipio Lobatera (Lobatera)">    Municipio Lobatera (Lobatera)</option>
+<option value="    Municipio Michelena (Michelena)">    Municipio Michelena (Michelena)</option>
+<option value="    Municipio Panamericano (Coloncito)">    Municipio Panamericano (Coloncito)</option>
+<option value="    Municipio Pedro María Ureña (Ureña)">    Municipio Pedro María Ureña (Ureña)</option>
+<option value="    Municipio Rafael Urdaneta (Delicias)">    Municipio Rafael Urdaneta (Delicias)</option>
+<option value="    Municipio Samuel Darío Maldonado (La Tendida)">    Municipio Samuel Darío Maldonado (La Tendida)</option>
+<option value="    Municipio San Cristóbal (San Cristóbal)">    Municipio San Cristóbal (San Cristóbal)</option>
+<option value="    Municipio San Judas Tadeo (Umuquena)">    Municipio San Judas Tadeo (Umuquena)</option>
+<option value="    Municipio Seboruco (Seboruco)">    Municipio Seboruco (Seboruco)</option>
+<option value="    Municipio Simón Rodríguez (San Simón)">    Municipio Simón Rodríguez (San Simón)</option>
+<option value="    Municipio Sucre (Queniquea)">    Municipio Sucre (Queniquea)</option>
+<option value="    Municipio Torbes (San Josecito)">    Municipio Torbes (San Josecito)</option>
+<option value="    Municipio Uribante (Pregonero)">    Municipio Uribante (Pregonero)</option>
+<option value="---Parroquias de Trujillo">---Parroquias de Trujillo</option>
+<option value="    Municipio Andrés Bello (Santa Isabel)">    Municipio Andrés Bello (Santa Isabel)</option>
+<option value="    Municipio Boconó (Boconó)">    Municipio Boconó (Boconó)</option>
+<option value="    Municipio Bolívar (Sabana Grande)">    Municipio Bolívar (Sabana Grande)</option>
+<option value="    Municipio Candelaria (Chejendé)">    Municipio Candelaria (Chejendé)</option>
+<option value="    Municipio Carache (Carache)">    Municipio Carache (Carache)</option>
+<option value="    Municipio Escuque (Escuque)">    Municipio Escuque (Escuque)</option>
+<option value="    Municipio José Felipe Márquez Cañizales (El Paradero)">    Municipio José Felipe Márquez Cañizales (El Paradero)</option>
+<option value="    Municipio José Vicente Campo Elías (Campo Elías)">    Municipio José Vicente Campo Elías (Campo Elías)</option>
+<option value="    Municipio La Ceiba (Santa Apolonia)">    Municipio La Ceiba (Santa Apolonia)</option>
+<option value="    Municipio Miranda (El Dividive)">    Municipio Miranda (El Dividive)</option>
+<option value="    Municipio Monte Carmelo (Monte Carmelo)">    Municipio Monte Carmelo (Monte Carmelo)</option>
+<option value="    Municipio Motatán (Motatán)">    Municipio Motatán (Motatán)</option>
+<option value="    Municipio Pampán (Pampán)">    Municipio Pampán (Pampán)</option>
+<option value="    Municipio Pampanito (Pampanito)">    Municipio Pampanito (Pampanito)</option>
+<option value="    Municipio Rafael Rangel (Betijoque)">    Municipio Rafael Rangel (Betijoque)</option>
+<option value="    Municipio San Rafael de Carvajal (Carvajal)">    Municipio San Rafael de Carvajal (Carvajal)</option>
+<option value="    Municipio Sucre (Sabana de Mendoza)">    Municipio Sucre (Sabana de Mendoza)</option>
+<option value="    Municipio Trujillo (Trujillo)">    Municipio Trujillo (Trujillo)</option>
+<option value="    Municipio Urdaneta (La Quebrada)">    Municipio Urdaneta (La Quebrada)</option>
+<option value="    Municipio Valera (Valera)">    Municipio Valera (Valera)</option>
+<option value="---Parroquias de Vargas">---Parroquias de Vargas</option>
+<option value="    Municipio Vargas (La Guaira)">    Municipio Vargas (La Guaira)</option>
+<option value="---Parroquias de Yaracuy">---Parroquias de Yaracuy</option>
+<option value="    Municipio Arístides Bastidas (San Pablo)">    Municipio Arístides Bastidas (San Pablo)</option>
+<option value="    Municipio Bolívar (Aroa)">    Municipio Bolívar (Aroa)</option>
+<option value="    Municipio Bruzual (Chivacoa)">    Municipio Bruzual (Chivacoa)</option>
+<option value="    Municipio Cocorote (Cocorote)">    Municipio Cocorote (Cocorote)</option>
+<option value="    Municipio Independencia (Independencia)">    Municipio Independencia (Independencia)</option>
+<option value="    Municipio Jose Antonio Páez (Sabana de Parra)">    Municipio Jose Antonio Páez (Sabana de Parra)</option>
+<option value="    Municipio La Trinidad (Boraure)">    Municipio La Trinidad (Boraure)</option>
+<option value="    Municipio Manuel Monge (Yumare)">    Municipio Manuel Monge (Yumare)</option>
+<option value="    Municipio Nirgua (Nirgua)">    Municipio Nirgua (Nirgua)</option>
+<option value="    Municipio Peña (Yaritagua)">    Municipio Peña (Yaritagua)</option>
+<option value="    Municipio San Felipe (San Felipe)">    Municipio San Felipe (San Felipe)</option>
+<option value="    Municipio Sucre (Guama)">    Municipio Sucre (Guama)</option>
+<option value="    Municipio Urachiche (Urachiche)">    Municipio Urachiche (Urachiche)</option>
+<option value="    Municipio Veroes (Farriar).">    Municipio Veroes (Farriar).</option>
+<option value="---Parroquias de Zulia">---Parroquias de Zulia</option>
+<option value="    Almirante Padilla (El Toro)">    Almirante Padilla (El Toro)</option>
+<option value="    Baralt (San Timoteo)">    Baralt (San Timoteo)</option>
+<option value="    Cabimas (Cabimas)">    Cabimas (Cabimas)</option>
+<option value="    Catatumbo (Encontrados)">    Catatumbo (Encontrados)</option>
+<option value="    Colón (San Carlos del Zulia)">    Colón (San Carlos del Zulia)</option>
+<option value="    Francisco Javier Pulgar (Pueblo Nuevo / El Chivo)">    Francisco Javier Pulgar (Pueblo Nuevo / El Chivo)</option>
+<option value="    Jesús Enrique Losada (La Concepción)">    Jesús Enrique Losada (La Concepción)</option>
+<option value="    Jesús María Semprún (Casigua el Cubo)">    Jesús María Semprún (Casigua el Cubo)</option>
+<option value="    La Cañada de Urdaneta (Concepción)">    La Cañada de Urdaneta (Concepción)</option>
+<option value="    Lagunillas (Ciudad Ojeda)">    Lagunillas (Ciudad Ojeda)</option>
+<option value="    Machiques de Perijá (Machiques)">    Machiques de Perijá (Machiques)</option>
+<option value="    Mara (San Rafael del Moján)">    Mara (San Rafael del Moján)</option>
+<option value="    Maracaibo (Maracaibo)">    Maracaibo (Maracaibo)</option>
+<option value="    Miranda (Los Puertos de Altagracia)">    Miranda (Los Puertos de Altagracia)</option>
+<option value="    Páez (Sinamaica)">    Páez (Sinamaica)</option>
+<option value="    Rosario de Perijá (La Villa del Rosario)">    Rosario de Perijá (La Villa del Rosario)</option>
+<option value="    San Francisco (San Francisco)">    San Francisco (San Francisco)</option>
+<option value="    Santa Rita (Santa Rita)">    Santa Rita (Santa Rita)</option>
+<option value="    Simón Bolívar (Tía Juana)">    Simón Bolívar (Tía Juana)</option>
+<option value="    Sucre (Bobures)">    Sucre (Bobures)</option>
+<option value="    Valmore Rodríguez (Bachaquero)">    Valmore Rodríguez (Bachaquero)</option>
+</select>
+</div>
+<div id="q45" class="q">
+<a class="item_anchor" name="ItemAnchor4"></a>
+<label class="question top_question" for="txtTipoVivienda">Tipo de Vivienda</label>
+<input name="txtTipoVivienda" class="text_field" id="txtTipoVivienda" size="30" maxlength="50" type="text">
+</div>
+<div id="q46" class="q">
+<a class="item_anchor" name="ItemAnchor5"></a>
+<span class="question top_question">Zona</span>
+<table class="inline_grid">
+<tbody><tr>
+<td><input name="ssZona" class="multiple_choice" id="ssZona_0" value="Rural" type="radio"><label for="SsZona_0">Rural</label></td>
+</tr>
+<tr>
+<td><input name="ssZona" class="multiple_choice" id="ssZona_1" value="Urbana" type="radio"><label for="SsZona">Urbana</label></td>
+</tr>
+</tbody></table>
+</div>
+<div class="clear"></div>
+
+</div>
+<!-- END_ITEMS -->
+<input name="EParam" value="FzpUCZwnDno=" type="hidden">
+<div class="outside_container">
+<div class="buttons_reverse">
+	<input name="Aceptar" value="Aceptar" class="submit_button" id="FSsubmit" type="submit">
+	<input name="Buscar" value="Buscar" class="submit_button" id="Buscar" type="button" onclick="Buscardh()">
+	<input name="Listar" value="Listar" class="submit_button" id="Listar" type="button" onclick="Listardh();">
+
+	</div></div>
+</form>
+
+
+</body></html>

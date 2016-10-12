@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class=" svg"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!-- base href="https://fs10.formsite.com/nel_cas_ruiz/" -->
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@formsite">
+<meta property="og:title" content="Alumnos">
+<meta property="og:type" content="website">
+<meta property="fb:admins" content="150429050199">
+<title>Sistemas de Registro de Alumnos: Docentes</title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/fonts7.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/screen7.css">
+<link rel="stylesheet" type="text/css" media="print" href="css/print7.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="css/responsive7.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/form.css">
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="js/form7.js"></script>
+</head>
+<body>
+	<script>
+	function BuscarD(){	
+	 if(document.getElementById("txtId").value===""){
+		 window.alert("Debe escribir alguna Id para buscar");
+		 }
+	else{
+	 url = 'php/manejodocente.php?modo=b&txtId=' + document.getElementById("txtId").value;
+	 window.open(url, '_blank');
+		}
+	}
+	function ListarD(){	
+	 url = 'php/manejodocente.php?modo=l';
+	 window.open(url, '_blank');
+	}
+	
+	</script>
+<form method="post" id="FSForm" action="php/manejodocente.php?modo=a" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
+<div style="display:none;">
+<input name="locid" value="nel_cas_ruiz/form1" type="hidden">
+<input name="EParam" value="AT1kKIiyxDzVLs0SuJ0SiaeLTfEDMMCuUSAE7pKjsPclansuDaO2v1whqWN/LAwJ" type="hidden">
+<input name="ElapsedTime" id="ElapsedTime" value="0" type="hidden">
+<input name="Referrer" id="Referrer" value="" type="hidden">
+<input name="subject_line" id="subject_line" autocomplete="off" type="text"><label for="subject_line">subject_line</label>
+</div>
+
+<!-- BEGIN_ITEMS -->
+<div class="form_table">
+
+<div class="clear"></div>
+
+<div id="q0" class="q full_width">
+<a class="item_anchor" name="ItemAnchor0"></a>
+<div class="segment_header" style="width:auto;text-align:Center;"><h1 style="font-size:24px;padding:20px 1em ;">Docentes</h1></div>
+</div>
+
+<div class="clear"></div>
+
+<div id="q44" class="q">
+<a class="item_anchor" name="ItemAnchor1"></a>
+<label class="question top_question" for="txtId">Id</label>
+<input name="txtId" class="text_field" id="txtId" size="10" maxlength="255" type="text">
+</div>
+
+<div id="q45" class="q required">
+<a class="item_anchor" name="ItemAnchor2"></a>
+<label class="question top_question" for="txtNombre">Nombre Docente <b class="icon_required" style="color:#FF0000">*</b></label>
+<input name="txtNombre" class="text_field" id="txtNombre" size="30" maxlength="100" type="text">
+</div>
+
+<div class="clear"></div>
+
+<div id="q49" class="q required">
+<a class="item_anchor" name="ItemAnchor4"></a>
+<label class="question top_question" for="lstTipo">Tipo  &nbsp;</label>
+<select id="lstTipo" name="lstTipo" class="drop_down">
+<option selected="selected"></option>
+<option value="Doc">DOCENTE</option>
+<option value="Aux">Auxiliar</option>
+</select>
+</div>
+
+<div id="q46" class="q required">
+<a class="item_anchor" name="ItemAnchor3"></a>
+<label class="question top_question" for="txtCedula">Cedula &nbsp;</label>
+<input name="txtCedula" class="text_field" id="txtCedula" size="15" maxlength="100" type="text">
+</div>
+
+<div id="q48" class="q">
+<a class="item_anchor" name="ItemAnchor5"></a>
+<label class="question top_question" for="txtTelefono">Telefono</label>
+<input name="txtTelefono" class="text_field" id="txtTelefono" size="20" maxlength="100" type="text">
+</div>
+<div class="clear"></div>
+
+</div>
+<!-- END_ITEMS -->
+<input name="EParam" value="FzpUCZwnDno=" type="hidden">
+<div class="outside_container">
+<div class="buttons_reverse">
+	<input name="Guardar" value="Guardar" class="submit_button" id="FSsubmit" type="submit">
+	<input name="Buscar" value="Buscar" class="submit_button" id="Buscar" type="button" onclick="BuscarD()">
+	<input name="Listar" value="Listar" class="submit_button" id="Listar" type="button" onclick="ListarD();">
+	</div></div>
+</form>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

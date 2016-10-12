@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class=" svg" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<!-- base href="https://fs10.formsite.com/nel_cas_ruiz/" -->
+<meta http-equiv="cache-control" content="no-cache"/>
+<meta http-equiv="expires" content="0"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@formsite"/>
+<meta property="og:title" content="Alumnos"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="FormSite"/>
+<meta property="og:description" content="View this form on Formsite"/>
+<meta property="og:image" content="https://www.formsite.com/apple-touch-icon.png"/>
+<meta property="fb:admins" content="150429050199"/>
+<title>Sistemas de Registro de Alumnos</title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/fonts7.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/screen7.css">
+<link rel="stylesheet" type="text/css" media="print" href="css/print7.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="css/responsive7.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/form.css">
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="js/form7.js"></script>
+
+<script>
+$().ready(function() {
+
+	$("#datepicker").datepicker({
+		//la fecha mas antigua es 1998 porque es una escuela, no deberia tener alumnos mayores de edad
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: "dd-mm-yy",
+		yearRange: "1900:2080",
+		dayNames: [ "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" ],
+		dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
+		firstDay: 1,
+		monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ],
+		onSelect: function(dateText, inst) { 
+		$("#txtFechaNacimiento").val(dateText);
+		$("#datepicker").fadeOut();
+		}
+	});
+
+	$("#q11").click(function () {
+	 $("#datepicker").show();
+	});
+
+});
+
+
+</script>
+
+
+</head>
+<body>
+	<script>
+	function Buscaralumnos(){	
+	 if(document.getElementById("txtId").value===""){
+		 window.alert("Debe escribir algun ID");
+		 }
+	else{
+	 url = 'php/manejoalumnos.php?modo=b&id=' + document.getElementById("txtId").value;
+	 window.open(url, '_blank');
+		}
+	}
+	function Listaralumnos(){	
+	 url = 'php/manejoalumnos.php?modo=l';
+	 window.open(url, '_blank');
+	}
+	</script>
+<form method="post" id="FSForm" action="php/manejoalumnos.php?modo=a" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
+<div style="display:none;">
+<input name="locid" value="nel_cas_ruiz/form1" type="hidden">
+<input name="EParam" value="AT1kKIiyxDzVLs0SuJ0SiaeLTfEDMMCuUSAE7pKjsPclansuDaO2v1whqWN/LAwJ" type="hidden">
+<input name="ElapsedTime" id="ElapsedTime" value="0" type="hidden">
+<input name="Referrer" id="Referrer" value="" type="hidden">
+<input name="subject_line" id="subject_line" autocomplete="off" type="text"><label for="subject_line">subject_line</label>
+</div>
+
+<!-- BEGIN_ITEMS -->
+<div class="form_table">
+
+<div class="clear"></div>
+
+<div id="q0" class="q full_width">
+<a class="item_anchor" name="ItemAnchor0"></a>
+<div class="segment_header" style="width:auto;text-align:Center;"><h1 style="font-size:24px;padding:20px 1em ;">Registro de Alumnos</h1></div>
+</div>
+
+<div class="clear"></div>
+
+<div id="q8" class="q required">
+<a class="item_anchor" name="ItemAnchor1"></a>
+<label class="question top_question" for="txtId">ID&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<input name="txtId" class="text_field" id="txtId" size="20" maxlength="100" type="text" required>
+</div>
+
+<div class="clear"></div>
+
+<div id="q1" class="q required">
+<a class="item_anchor" name="ItemAnchor2"></a>
+<label class="question top_question" for="txtApellido">Apellidos&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<input name="txtApellido" class="text_field" id="txtApellido" size="50" maxlength="255" type="text" required>
+</div>
+
+<div class="clear"></div>
+
+<div id="q3" class="q required">
+<a class="item_anchor" name="ItemAnchor3"></a>
+<label class="question top_question" for="txtNombres">Nombres&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<input name="txtNombres" class="text_field" id="txtNombres" size="50" maxlength="255" type="text" required>
+</div>
+
+
+
+<div id="q9" class="q">
+<a class="item_anchor" name="ItemAnchor4"></a>
+<label class="question top_question" for="lstSexo">Sexo</label>
+<select id="lstSexo" name="lstSexo" class="drop_down" required>
+<option selected="selected"></option>
+<option value="M">M</option>
+<option value="F">F</option>
+</select>
+</div>
+
+<div class="clear"></div>
+
+<div id="q10" class="q required">
+<a class="item_anchor" name="ItemAnchor5"></a>
+<label class="question top_question" for="txtCiEscolar">CiEscolar&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<input name="txtCiEscolar" class="text_field" id="txtCiEscolar" size="20" maxlength="100" type="text" required>
+</div>
+
+<div id="q11" class="q required">
+<a class="item_anchor" name="ItemAnchor6"></a>
+<label class="question top_question" for="RESULT_TextField-6">Fecha_nacimiento&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<input name="txtFechaNacimiento" class="text_field calendar_field hasDatepicker" id="txtFechaNacimiento" size="10" maxlength="10" datemax="" datemin="" date="yy-mm-dd" type="text">
+<img class="svg popup_button inline_button" src="images/calendar.svg" alt="calendar" style="vertical-align:middle;" required>
+<img class="gif popup_button inline_button" src="images/calendar.gif" alt="calendar" style="vertical-align:middle;">
+</div>
+
+<div id="datepicker" class ="q"></div>
+<div class="clear"></div>
+
+<div id="q12" class="q">
+<a class="item_anchor" name="ItemAnchor7"></a>
+<label class="question top_question" for="lstPais">País</label>
+<select id="lstPais" name="lstPais" class="drop_down" required>
+<option selected="selected"></option>
+<option value="Venezuela">Venezuela</option>
+<option value="Otro">Otro</option>
+</select>
+</div>
+<div id="q13" class="q required">
+<a class="item_anchor" name="ItemAnchor8"></a>
+<label class="question top_question" for="lstEstado">Estado&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<select id="lstEstado" name="lstEstado" class="drop_down" required >
+<option selected="selected"></option>
+<option value="Amazonas">Amazonas</option>
+<option value="Anzoategui">Anzoátegui</option>
+<option value="Apure">Apure</option>
+<option value="Aragua">Aragua</option>
+<option value="Barinas">Barinas</option>
+<option value="Bolivar">Bolívar</option>
+<option value="Carabobo">Carabobo</option>
+<option value="Cojedes">Cojedes</option>
+<option value="Delta_Amacuro">Delta Amacuro</option>
+<option value="Distrito_Capital">Distrito Capital</option>
+<option value="Falcon">Falcón</option>
+<option value="Guarico">Guárico</option>
+<option value="Lara">Lara</option>
+<option value="Merida">Mérida</option>
+<option value="Miranda">Miranda</option>
+<option value="Monagas">Monagas</option>
+<option value="Nueva_Esparta">Nueva Esparta</option>
+<option value="Portuguesa">Portuguesa</option>
+<option value="Sucre">Sucre</option>
+<option value="Tachira">Tachira</option>
+<option value="Trujillo">Trujillo</option>
+<option value="Vargas">Vargas</option>
+<option value="Yaracuy">Yaracuy</option>
+<option value="Zulia">Zulia</option>
+<option value="Otro">Otro</option>
+</select>
+</div>
+<div id="q14" class="q">
+<a class="item_anchor" name="ItemAnchor9"></a>
+<label class="question top_question" for="txtCiudad">Ciudad</label>
+<input name="txtCiudad" class="text_field" id="txtCiudad" size="25" maxlength="255" type="text">
+</div>
+
+<div class="clear"></div>
+<div id="q15" class="q">
+<a class="item_anchor" name="ItemAnchor10"></a>
+<label class="question top_question" for="txtOrdenNacimiento">Orden de Nacimiento</label>
+<input name="txtOrdenNacimiento" class="text_field number_field" id="txtOrdenNacimiento" size="10" maxlength="20" type="text">
+</div>
+<div id="q16" class="q">
+<a class="item_anchor" name="ItemAnchor11"></a>
+<label class="question top_question" for="txtTipoParto">Tipo de Parto</label>
+<input name="txtTipoParto" class="text_field" id="txtTipoParto" size="20" maxlength="255" type="text">
+</div>
+<div id="q17" class="q">
+<a class="item_anchor" name="ItemAnchor12"></a>
+<span class="question top_question">Parto</span>
+<table class="inline_grid" >
+<tbody><tr>
+<td><input name="ssParto" class="multiple_choice" id="ssParto_0" value="Multiple" type="radio" required><label for="ssParto_0">Múltiple</label></td>
+</tr>
+<tr>
+<td><input name="ssParto" class="multiple_choice" id="ssParto_1" value="Simple" type="radio"><label for="ssParto_1">Simple</label></td>
+</tr>
+</tbody></table>
+</div>
+<div id="q18" class="q">
+<a class="item_anchor" name="ItemAnchor13"></a>
+<label class="question top_question" for="txtNumeroNacimiento">Numero de Nacimiento</label>
+<input name="txtNumeroNacimiento" class="text_field number_field" id="txtNumeroNacimiento" size="10" maxlength="50" type="text">
+</div>
+
+<div class="clear"></div>
+
+<div id="q22" class="q">
+<a class="item_anchor" name="ItemAnchor14"></a>
+<span class="question top_question">Tratamientos</span>
+<table class="inline_grid">
+<tbody><tr>
+
+<td><input name="msTratamientos_0" class="multiple_choice" id="msTratamientos_0" value="Medico" type="checkbox" ><label for="msTratamientos_0">Médico</label></td>
+</tr>
+<tr>
+<td><input name="msTratamientos_1" class="multiple_choice" id="msTratamientos_1" value="Odontologico" type="checkbox"><label for="msTratamientos_1">Odontológico</label></td>
+</tr>
+<tr>
+<td><input name="msTratamientos_2" class="multiple_choice" id="msTratamientos_2" value="Psicologico" type="checkbox"><label for="msTratamientos_2">Psicológico</label></td>
+</tr>
+<td><input name="msTratamientos_3" class="multiple_choice" id="msTratamientos_3" value="Ninguno" type="checkbox"><label for="msTratamientos_3">Ninguno</label></td>
+</tbody></table>
+</div>
+<div id="q21" class="q">
+<a class="item_anchor" name="ItemAnchor15"></a>
+<span class="question top_question">Problemas</span>
+<table class="inline_grid">
+<tbody><tr>
+<td><input  name="msProblemas_0" class="multiple_choice" id="msProblemas_0" value="Lenguaje" type="checkbox"><label for="msProblemas_0">Lenguaje</label></td>
+</tr>
+<tr>
+<td><input name="msProblemas_1" class="multiple_choice" id="msProblemas_1" value="Vision" type="checkbox"><label for="msProblemas_1">Visión</label></td>
+</tr>
+<tr>
+<td><input name="msProblemas_2" class="multiple_choice" id="msProblemas_2" value="Parto" type="checkbox"><label for="msProblemas_2">Parto</label></td>
+</tr>
+<td><input name="msProblemas_3" class="multiple_choice" id="msProblemas_3" value="Ninguno" type="checkbox"><label for="msProblemas_3">Ninguno</label></td>
+</tbody></table>
+</div>
+<div id="q24" class="q">
+<a class="item_anchor" name="ItemAnchor16"></a>
+<label class="question top_question" for="txtEnfermedades">Enfermedades</label>
+<textarea name="txtEnfermedades" class="text_field" id="txtEnfermedades" rows="5" cols="30"></textarea>
+</div>
+
+<div class="clear"></div>
+
+<div id="q25" class="q">
+<a class="item_anchor" name="ItemAnchor17"></a>
+<label class="question top_question" for="txtControlVacunas">Control de Vacunas</label>
+<textarea name="txtControlVacunas" class="text_field" id="txtControlVacunas" rows="5" cols="30"></textarea>
+</div>
+<div id="q26" class="q">
+<a class="item_anchor" name="ItemAnchor18"></a>
+<label class="question top_question" for="txtAlergias">Alergias</label>
+<textarea name="txtAlergias" class="text_field" id="txtAlergias" rows="5" cols="30"></textarea>
+</div>
+
+<div class="clear"></div>
+
+<div id="q27" class="q">
+<a class="item_anchor" name="ItemAnchor19"></a>
+<label class="question top_question" for="txtTalla">Talla</label>
+<input name="txtTalla" class="text_field" id="txtTalla" size="10" maxlength="20" type="text">
+</div>
+<div id="q28" class="q">
+<a class="item_anchor" name="ItemAnchor20"></a>
+<label class="question top_question" for="txtPeso">Peso</label>
+<input name="txtPeso" class="text_field" id="txtPeso" size="10" maxlength="20" type="text">
+</div>
+<div id="q29" class="q">
+<a class="item_anchor" name="ItemAnchor21"></a>
+<label class="question top_question" for="txtResponsable">Responsable Primeros años</label>
+<input name="txtResponsable" class="text_field" id="txtResponsable" size="25" maxlength="255" type="text">
+</div>
+
+<div class="clear"></div>
+
+<div id="q30" class="q">
+<a class="item_anchor" name="ItemAnchor22"></a>
+<span class="question top_question">Beca</span>
+<table class="inline_grid">
+<tbody><tr>
+<td><input required name="ssBeca" class="multiple_choice" id="ssBeca_0" value="Si" type="radio"><label for="ssBeca_0">Si</label></td>
+</tr>
+<tr>
+<td><input name="ssBeca" class="multiple_choice" id="ssBeca_1" value="No" type="radio"><label for="ssBeca_1">No</label></td>
+</tr>
+</tbody></table>
+</div>
+<div id="q31" class="q">
+<a class="item_anchor" name="ItemAnchor23"></a>
+<span class="question top_question">Canaima</span>
+<table class="inline_grid">
+<tbody><tr>
+<td><input required name="ssCanaima" class="multiple_choice" id="ssCanaima_0" value="Si" type="radio"><label for="ssCanaima_0">Si</label></td>
+</tr>
+<tr>
+<td><input name="ssCanaima" class="multiple_choice" id="ssCanaima_1" value="No" type="radio"><label for="ssCanaima_1">No</label></td>
+</tr>
+</tbody></table>
+</div>
+<div class="clear"></div>
+<div style="position:relative;font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:12px;line-height:36px;text-align:left;background-color:#fafafa;height:35px;margin-top:10px;overflow:hidden;">
+</div>
+</div>
+<!-- END_ITEMS -->
+<input name="EParam" value="FzpUCZwnDno=" type="hidden">
+<div class="outside_container">
+<div class="buttons_reverse">
+	<input name="Aceptar" value="Aceptar" class="submit_button" id="FSsubmit" type="submit">
+	<input name="Buscar" value="Buscar" class="submit_button" id="Buscar" type="button" onclick="Buscaralumnos()">
+	<input name="Listar" value="Listar" class="submit_button" id="Listar" type="button" onclick="Listaralumnos();">
+</div>
+</div>
+</form>
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

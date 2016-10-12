@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class=" svg"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!-- base href="https://fs10.formsite.com/nel_cas_ruiz/" -->
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@formsite">
+<meta property="og:title" content="Alumnos">
+<meta property="og:site_name" content="FormSite">
+<meta property="fb:admins" content="150429050199">
+<title>Sistemas de Registro de Alumnos</title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/fonts7.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/screen7.css">
+<link rel="stylesheet" type="text/css" media="print" href="css/print7.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="css/responsive7.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/form.css">
+
+<script src="jquery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="js/form7.js"></script>
+</head>
+<body>
+	<script>
+
+	function BuscarR(){	
+	 if(document.getElementById("txtId").value===""){
+		 window.alert("Debe escribir alguna Id para buscar");
+		 }
+	else{
+	 url = 'php/manejoratificacion.php?modo=b&txtId=' + document.getElementById("txtId").value;
+	 window.open(url, '_blank');
+		}
+	}
+	
+	function ListarR(){	
+	 url = 'php/manejoratificacion.php?modo=l';
+	 window.open(url, '_blank');
+	}
+
+function realizaProceso(){
+        $.ajax({
+                data: {
+                modo: 's',
+                fuera: 's'
+				},
+                url:   'php/manejoratificacion.php',
+                type:  'post',
+                beforeSend: function () {
+                        $("#respInscripcion").html("Procesando, espere por favor y no joda...");
+                },
+                success:  function (response) {
+                        $("#respInscripcion").html(response);
+                }
+        });
+}
+
+	</script>
+<form method="post" id="FSForm" action="php/manejoratificacion.php?modo=a" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
+<div style="display:none;">
+<input name="locid" value="nel_cas_ruiz/form1" type="hidden">
+<input name="EParam" value="AT1kKIiyxDzVLs0SuJ0SiaeLTfEDMMCuUSAE7pKjsPclansuDaO2v1whqWN/LAwJ" type="hidden">
+<input name="ElapsedTime" id="ElapsedTime" value="0" type="hidden">
+<input name="Referrer" id="Referrer" value="" type="hidden">
+<input name="subject_line" id="subject_line" autocomplete="off" type="text"><label for="subject_line">subject_line</label>
+</div>
+
+<!-- BEGIN_ITEMS -->
+<div class="form_table">
+
+<div class="clear"></div>
+
+<div id="q0" class="q full_width">
+<a class="item_anchor" name="ItemAnchor0"></a>
+<div class="segment_header" style="width:auto;text-align:Center;"><h1 style="font-size:24px;padding:20px 1em ;">Ratificación de Inscripcion</h1></div>
+</div>
+
+<div class="clear"></div>
+
+<div id="q4" class="q">
+<a class="item_anchor" name="ItemAnchor1"></a>
+<label class="question top_question" for="txtId">Id  <b class="icon_required" style="color:#FF0000"> *</b></label>
+<input name="txtId" class="text_field" id="txtId" size="20" maxlength="255" type="text" required>
+</div>
+<div id="q44" class="q">
+<a class="item_anchor" name="ItemAnchor1"></a>
+<label class="question top_question" for="txtIdInscripcion">Id Inscripcion Ratificar <b class="icon_required" style="color:#FF0000"> *</b></label>
+<input name="txtIdInscripcion" class="text_field" id="txtIdInscripcion" size="20" maxlength="255" type="text" required>
+	<a href="php/manejoratificacion?modo=s"><button name="BuscarInscripcion" >Inscripciones</button></a>
+	<input type="button" href="javascript:;" onclick="realizaProceso();return false;" value="Calcula" />
+	<div id="respInscripcion"> </div>
+</div>
+
+<div class="clear"></div>
+
+<div id="q45" class="q required">
+<a class="item_anchor" name="ItemAnchor2"></a>
+<label class="question top_question" for="txtFechaInscrocipcion">Fecha de Ratificacion&nbsp;</label>
+<input name="txtFechaInscrocipcion" class="text_field calendar_field hasDatepicker" id="txtFechaInscrocipcion" size="10" maxlength="10" datemax="" datemin="" date="yy-mm-dd" type="text">
+<img class="svg popup_button inline_button" src="images/calendar.svg" alt="calendar" style="vertical-align:middle;">
+<img class="gif popup_button inline_button" src="images/calendar.gif" alt="calendar" style="vertical-align:middle;">
+
+</div>
+
+<div id="q49" class="q required">
+<a class="item_anchor" name="ItemAnchor4"></a>
+<label class="question top_question" for="txtDocenteInscribe">Docente que Ratifica &nbsp;</label>
+<select name="txtDocenteInscribe"  class="drop_down" >
+<?php
+
+include_once ("php/conexion.php");
+
+$cadena = "SELECT id, nombre, cedula FROM docentes ORDER BY id;";
+$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$resultadoc = $con->consultar($cadena); 
+	if($resultadoc){
+	$cont=$con->contar($resultadoc);
+	if($cont<=0){	
+		$filas= -1;
+		echo " <option value='EROR'> No hay ningún docente registrado </option>'";
+		}else{
+		while($resultados = $con->registros($resultadoc)) {
+			//echo"$resultados->nombre CI: $resultados->cedula ";
+			$mostrar= "$resultados->nombre CI: $resultados->cedula";
+			echo "<option  value='".$resultados->nombre."'>".$mostrar."</option>"; 
+
+			}//Fin while $resultados
+		}
+	}else{
+		$filas= -2;
+	}
+ 
+?>
+</select>
+<div id="resultado"></div>
+</div>
+<div id="q48" class="q">
+<a class="item_anchor" name="ItemAnchor5"></a>
+<label class="question top_question" for="txtObservaciones">Observaciones</label>
+<textarea name="txtObservaciones" class="text_field" id="txtObservaciones" rows="4" cols="40"></textarea>
+</div>
+<div class="clear"></div>
+
+</div>
+<!-- END_ITEMS -->
+<input name="EParam" value="FzpUCZwnDno=" type="hidden">
+<div class="outside_container">
+<div class="buttons_reverse">
+	<input name="Guardar" value="Guardar" class="submit_button" id="FSsubmit" type="submit">
+	<input name="Buscar" value="Buscar" class="submit_button" id="Buscar" type="button" onclick="BuscarR()">
+	<input name="Listar" value="Listar" class="submit_button" id="Listar" type="button" onclick="ListarR();">
+
+	</div></div>
+</form>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

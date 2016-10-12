@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class=" svg"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@formsite">
+<meta property="og:title" content="Representante">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="/representante.html">
+<meta property="og:description" content="View this form on Formsite">
+<meta property="fb:admins" content="150429050199">
+<title>Representante</title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/fonts7.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/screen7.css">
+<link rel="stylesheet" type="text/css" media="print" href="css/print7.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="css/responsive7.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/form.css">
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="js/form7.js"></script>
+</head>
+<body>
+	<script>
+	function BuscarRepresentantes(){	
+	 if(document.getElementById("txtCedula").value===""){
+		 window.alert("Debe escribir alguna Cedula");
+		 }
+	else{
+	 url = 'php/manejorepresentante.php?modo=b&txtCedula=' + document.getElementById("txtCedula").value;
+	 window.open(url, '_blank');
+		}
+	}
+	function ListarRepresentantes(){	
+	 url = 'php/manejorepresentante.php?modo=l';
+	 window.open(url, '_blank');
+	}
+	</script>
+<form method="post" id="FSForm" action="php/manejorepresentante.php?modo=a" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
+<div style="display:none;">
+<input name="locid" value="nel_cas_ruiz1/form1" type="hidden">
+<input name="EParam" value="AT1kKIiyxDxm/BPsASvwoKeLTfEDMMCuUSAE7pKjsPfh/LYul01DGXj3VIU9U6+7" type="hidden">
+<input name="ElapsedTime" id="ElapsedTime" value="0" type="hidden">
+<input name="Referrer" id="Referrer" value="" type="hidden">
+<input name="subject_line" id="subject_line" autocomplete="off" type="text"><label for="subject_line">subject_line</label>
+</div>
+
+<!-- BEGIN_ITEMS -->
+<div class="form_table">
+
+<div class="clear"></div>
+
+<div id="q18" class="q full_width">
+<a class="item_anchor" name="ItemAnchor0"></a>
+<div class="segment_header" style="width:auto;text-align:Center;"><h1 style="font-size:18px;padding:20px 1em ;">Registro de Representante</h1></div>
+</div>
+<div class="clear"></div>
+
+<div id="q19" class="q required">
+<a class="item_anchor" name="ItemAnchor1"></a>
+<label class="question top_question" for="txtCedula">Cédula&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<input name="txtCedula" class="text_field" id="txtCedula" size="20" maxlength="50" type="text" required>
+</div>
+<div id="q33" class="q ">
+<a class="item_anchor" name="ItemAnchor2"></a>
+<span class="question top_question">Vive con el alumno</span>
+<table class="inline_grid">
+<tbody><tr>
+<td><input name="SsViveConAlumno" class="multiple_choice" id="SsViveConAlumno_0" value="Si" type="radio"><label for="SsViveConAlumno _0">Si</label></td>
+</tr>
+<tr>
+<td><input name="SsViveConAlumno" class="multiple_choice" id="SsViveConAlumno_1" value="No" type="radio"><label for="SsViveConAlumno _1">No</label></td>
+</tr>
+</tbody></table>
+</div>
+<div class="clear"></div>
+
+<div id="q2" class="q required">
+<a class="item_anchor" name="ItemAnchor2"></a>
+<label class="question top_question" for="txtNombre">Nombre&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<input name="txtNombre" class="text_field" id="txtNombre" size="25" maxlength="255" type="text" >
+</div>
+<div id="q3" class="q required">
+<a class="item_anchor" name="ItemAnchor3"></a>
+<label class="question top_question" for="txtApellido">Apellido&nbsp;<b class="icon_required" style="color:#FF0000">*</b></label>
+<input name="txtApellido" class="text_field" id="txtApellido" size="25" maxlength="255" type="text" >
+</div>
+<div class="clear"></div>
+<div id="q20" class="q">
+<a class="item_anchor" name="ItemAnchor4"></a>
+<label class="question top_question" for="RESULT_TextField-4">Fecha de Nacimiento</label>
+<input name="txtFechaNacimiento" class="text_field calendar_field hasDatepicker" id="txtFechaNacimiento" size="10" maxlength="10" datemax="" datemin="" date="dd-mm-yyyy" type="text"><img class="svg popup_button inline_button" src="images/calendar.svg" alt="calendar" style="vertical-align:middle;">
+<img class="gif popup_button inline_button" src="Representante_archivos/calendar.gif" alt="calendar" style="vertical-align:middle;">
+</div>
+<div id="q22" class="q">
+<a class="item_anchor" name="ItemAnchor5"></a>
+<label class="question top_question" for="RESULT_TextField-5">Pais</label>
+<input name="txtPais" class="text_field" id="txtPais" size="25" maxlength="50" type="text">
+</div>
+<div id="q21" class="q">
+<a class="item_anchor" name="ItemAnchor6"></a>
+<label class="question top_question" for="RESULT_RadioButton-6">Estado</label>
+<select id="lstEstado" name="lstEstado" class="drop_down">
+<option selected="selected"></option>
+<option value="Amazonas">Amazonas</option>
+<option value="Anzoategui">Anzoátegui</option>
+<option value="Apure">Apure</option>
+<option value="Aragua">Aragua</option>
+<option value="Barinas">Barinas</option>
+<option value="Bolivar">Bolívar</option>
+<option value="Carabobo">Carabobo</option>
+<option value="Cojedes">Cojedes</option>
+<option value="Delta_amacuro">Delta Amacuro</option>
+<option value="Distrito_Capital">Distrito Capital</option>
+<option value="Falcon">Falcón</option>
+<option value="Guarico">Guárico</option>
+<option value="Lara">Lara</option>
+<option value="Merida">Mérida</option>
+<option value="Miranda">Miranda</option>
+<option value="Monagas">Monagas</option>
+<option value="Nueva_Esparta">Nueva Esparta</option>
+<option value="Portuguesa">Portuguesa</option>
+<option value="Sucre">Sucre</option>
+<option value="Tachira">Tachira</option>
+<option value="Trujillo">Trujillo</option>
+<option value="Vargas">Vargas</option>
+<option value="Yaracuy">Yaracuy</option>
+<option value="Zulia">Zulia</option>
+<option value="Otro">Otro</option>
+</select>
+</div>
+
+<div class="clear"></div>
+<div id="q24" class="q">
+<a class="item_anchor" name="ItemAnchor8"></a>
+<label class="question top_question" for="txtEstadoCivil">Estado Civil </label>
+<input name="txtEstadoCivil" class="text_field" id="txtEstadoCivil" size="25" maxlength="255" type="text">
+</div>
+<div id="q25" class="q">
+<a class="item_anchor" name="ItemAnchor9"></a>
+<label class="question top_question" for="RESULT_RadioButton-9">Genero</label>
+<select id="lstGenero" name="lstGenero" class="drop_down">
+<option selected="selected"></option>
+<option value="M">Masculino</option>
+<option value="F">Femenino</option>
+</select>
+</div>
+
+<div class="clear"></div>
+<div id="q26" class="q">
+<a class="item_anchor" name="ItemAnchor10"></a>
+<label class="question top_question" for="RESULT_TextField-10">Parentesco</label>
+<input name="txtParentesco" class="text_field" id="txtParentesco" size="25" maxlength="50" type="text">
+</div>
+<div id="q9" class="q">
+<a class="item_anchor" name="ItemAnchor11"></a>
+<label class="question top_question" for="RESULT_TextField-11">Telefono</label>
+<input name="txtTelefono" class="text_field" id="txtTelefono" size="20" maxlength="50" type="text">
+</div>
+<div id="q27" class="q">
+<a class="item_anchor" name="ItemAnchor12"></a>
+<label class="question top_question" for="RESULT_TextField-12">Celular</label>
+<input name="txtCelular" class="text_field" id="txtCelular" size="20" maxlength="50" type="text">
+</div>
+
+<div class="clear"></div>
+
+<div id="q28" class="q">
+<a class="item_anchor" name="ItemAnchor13"></a>
+<label class="question top_question" for="RESULT_TextField-13">Oficio</label>
+<input name="txtOficio" class="text_field" id="txtOficio" size="25" maxlength="100" type="text">
+</div>
+<div id="q29" class="q">
+<a class="item_anchor" name="ItemAnchor14"></a>
+<label class="question top_question" for="RESULT_TextField-14">Empresa donde trabaja</label>
+<input name="txtEmpresa" class="text_field" id="txtEmpresa" size="25" maxlength="255" type="text">
+</div>
+
+<div class="clear"></div>
+
+<div id="q31" class="q">
+<a class="item_anchor" name="ItemAnchor15"></a>
+<label class="question top_question" for="RESULT_TextField-15">Dirección Trabajo</label>
+<input name="txtDireccionTrabajo" class="text_field" id="txtDireccionTrabajo" size="25" maxlength="100" type="text">
+</div>
+<div id="q30" class="q">
+<a class="item_anchor" name="ItemAnchor16"></a>
+<label class="question top_question" for="RESULT_TextField-16">Teléfono Trabajo</label>
+<input name="txtTelefonoTrabajo" class="text_field" id="txtTelefonoTrabajo" size="25" maxlength="255" type="text">
+</div>
+
+<div class="clear"></div>
+
+<div id="q32" class="q">
+<a class="item_anchor" name="ItemAnchor17"></a>
+<label class="question top_question" for="RESULT_TextField-17">Email</label>
+<input name="txtCorreo" class="text_field" id="txtCorreo" size="25" maxlength="255" type="email">
+</div>
+<div class="clear"></div>
+
+</div>
+<!-- END_ITEMS -->
+<input name="EParam" value="FzpUCZwnDno=" type="hidden">
+<div class="outside_container">
+	<input name="Listar" value="Listar" class="submit_button" id="Listar" type="button" onclick="ListarRepresentantes();">
+	<input name="Buscar" value="Buscar" class="submit_button" id="Buscar" type="button" onclick="BuscarRepresentantes()">
+	<input name="Aceptar" value="Aceptar" class="submit_button" id="FSsubmit" type="submit">
+</form>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

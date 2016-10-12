@@ -1,0 +1,308 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+        <title>Sistemas de Registro de Alumnos </title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <meta name="generator" content="Geany 1.27" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+        <link rel="stylesheet" type="text/css" media="all" href="css/fonts7.css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="css/screen7.css"/>
+        <link rel="stylesheet" type="text/css" media="print" href="css/print7.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="css/responsive7.css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="css/form.css">
+        
+        <link rel="stylesheet" type="text/css" media="all" href="tablas/jquery.dataTables.min.css">
+		<link rel="stylesheet" type="text/css" media="all" href="tablas/dataTables.bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="all" href="css/list2.css">
+    	    	    
+        <script type="text/javascript" src="js/form7.js"></script>
+		<script type="text/javascript" src="tablas/jquery-1.12.3.js"></script>
+		<script type="text/javascript" src="tablas/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="tablas/dataTables.bootstrap.min.js"></script>
+		
+<script>
+$(document).ready(function (){
+	//boton alumno y genera listado alumno
+	$(document).on('click', "[id^=alumnos_]",function (e){
+		var t = $('#tabla_alumnos_seleccionados').DataTable();
+		var counter = 1;
+		var dato = this.childNodes[0].innerHTML;
+		var sw=0;
+		// si el childnodes[0] no esta en t lo agrego
+		t.column(0).nodes().each( function (cell) {
+            if (cell.innerHTML == dato) sw=1 ;
+        } );
+		
+		if(sw==0){
+		//agrega el alumno al listado alumnos_seleccionados
+		 t.row.add([
+            this.childNodes[0].innerHTML,
+            this.childNodes[1].innerHTML,
+            this.childNodes[2].innerHTML,
+            this.childNodes[3].innerHTML,
+            this.childNodes[4].innerHTML
+        ]).draw( false ) };
+        
+	});
+	
+	    $(document).on('click', "#tabla_alumnos_seleccionados tbody tr",function (e){
+		alert(" Elimina de la selecciona el alumno "+ this.childNodes[1].innerHTML + " " + this.childNodes[2].innerHTML);
+		this.remove();
+		});
+		
+		$(document).on('click', "#btAlumno",function(r){
+		$.ajax({
+			data: {
+				modo: 's',
+				fuera: 's'
+			},
+			url: 'tablas/alumnos2.phtml',
+			type: 'post',
+			beforeSend: function () {
+				$("#reponseAlumno").html("Procesando, espere por favor ...");
+			},
+			success: function (response) {
+				$("#reponseAlumno").show();
+				$("#reponseAlumno").html(response);
+				$("#btAsignar").show();
+				$("#tabla_alumnos_seleccionados").show();
+			},
+		});
+	});
+		
+/*	$(document).on('click', "#FSsubmit",function(r){
+		
+		$.ajax({
+			data: {
+				modo: 's',
+				fuera: 's'
+			},
+			url: 'php/manejoprocinscripcion.php',
+			type: 'post',
+			beforeSend: function () {
+				$("#respuestaProcesoAlumnnos").html("Procesando, espere por favor ...");
+			},
+			success: function (response) {
+				$("#respuestaProcesoAlumnnos").show();
+				$("#respuestaProcesoAlumnnos").html(response);
+			},
+		});
+	});
+*/		
+	
+	});
+</script>
+
+    </head>
+
+    <body>
+        <script>
+
+		 function BuscarRAl() {
+                if (document.getElementById("lstinscripcion").value === "") {
+                    window.alert("Debe seleccionar añguna inscripcion para buscar");
+                } else {
+                    url = 'php/manejoprocinscripcion.php?modo=b&idinscripcion=' + document.getElementById("lstinscripcion").value;
+                    window.open(url, '_blank');
+                }
+            }
+            ;
+
+          function ListarPRAl() {
+                url = 'php/manejoprocinscripcion.php?modo=l&idgrupo='+ document.getElementById("lstgrupo").value + '&idinscripcion=' + document.getElementById("lstinscripcion").value;
+                window.open(url, '_blank');
+            }
+            ;
+            
+       function recorerAlumnosSeleccionados(){
+		$("#tabla_alumnos_seleccionados tbody tr").each(function (index) 
+        {
+            var id_alumno, Apellido, Nombre, id_grupo, id_inscripcion;
+            $(this).children("td").each(function (index2) 
+            {
+                switch (index2) 
+                {
+                    case 0: id_alumno = $(this).text();
+                            break;
+                    case 1: Apellido = $(this).text();
+                            break;
+                    case 2: Nombre = $(this).text();
+                            break;
+                }
+            })
+            //aqui esta recorriendo cada elemento de la tabla
+            // construir un vector de alumnos solo con la id
+            id_grupo=lstgrupo.value;
+            id_inscripcion=lstinscripcion.value;
+            
+            $.ajax({
+			data: {
+				modo: 'a',
+				idalumno: id_alumno,
+				idgrupo: id_grupo,
+				idinscripcion: id_inscripcion
+			},
+			url: 'php/manejoprocinscripcion.php',
+			type: 'post',
+			beforeSend: function () {
+				$("#respuestaProcesoAlumnnos").html("Procesando, espere por favor ...");
+			},
+			success: function (response) {
+				$("#respuestaProcesoAlumnnos").append(response);
+				//$("#div").text("salio ok");
+			} });
+        });
+           $("#respuestaProcesoAlumnnos").append(" Proceso Listo!!! ");
+    };
+			   
+        </script>
+        <form method="post" id="FSForm" action="php/manejoprocinscripcion.php?modo=a" enctype="application/x-www-form-urlencoded" onsubmit="return Vromansys.Form.processSubmit(this);">
+            <div style="display:none;">
+                <input name="locid" value="nel_cas_ruiz/form1" type="hidden">
+				<input name="EParam" value="AT1kKIiyxDzVLs0SuJ0SiaeLTfEDMMCuUSAE7pKjsPclansuDaO2v1whqWN/LAwJ" type="hidden">
+				<input name="ElapsedTime" id="ElapsedTime" value="0" type="hidden">
+				<input name="Referrer" id="Referrer" value="" type="hidden">
+				<input name="subject_line" id="subject_line" autocomplete="off" type="text"><label for="subject_line">subject_line</label>
+			</div>
+
+       <!-- BEGIN_ITEMS -->
+		<div class="form_table">
+			<div class="clear"></div>
+
+			<div id="q0" class="q full_width">
+				<a class="item_anchor" name="ItemAnchor0"></a>
+				<div class="segment_header" style="width:auto;text-align:Center;"><h1 style="font-size:24px;padding:20px 1em ;">Procesar Inscripciones</h1></div>
+			</div>
+
+			<div class="clear"></div>
+
+			<div id="q44" class="q">
+				<a class="item_anchor" name="ItemAnchor1"></a>
+				<label class="question top_question" for="lstgrupo">Seleccion de Grupo  <b class="icon_required" style="color:#FF0000"> *</b></label>
+				<select id="lstgrupo" name="lstgrupo" class="drop_down" required>
+				<option selected="selected"></option>
+				<?php
+				include_once ("php/conexion.php");
+				$cadena = "SELECT id, grupo FROM grupos ORDER BY id;";
+				$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+					$resultadoc = $con->consultar($cadena); 
+					if($resultadoc){
+					$cont=$con->contar($resultadoc);
+					if($cont<=0){	
+						$filas= -1;
+						echo " <option value='EROR'> No hay ningún docente registrado </option>'";
+						}else{
+						while($resultados = $con->registros($resultadoc)) {
+							$mostrar= "ID: $resultados->id grupo: $resultados->grupo";
+							echo "<option  value='".$resultados->id."'>".$mostrar."</option>"; 
+							}//Fin while $resultados
+						}
+					}else{
+						$filas= -2;
+					}
+				?>
+				</select>
+			</div>
+			<div class="clear"></div>
+
+			<div id="q45" class="q required">
+				<a class="item_anchor" name="ItemAnchor2"></a>
+				<label class="question top_question" for="lstinscripcion">Seleccion de Inscripcion </label>
+				<select id="lstinscripcion" name="lstinscripcion" class="drop_down" required>
+				<option selected="selected"></option>
+				<?php
+				include_once ("php/conexion.php");
+				$cadena = "SELECT id ,  fecha_ins_ini , anno_escolar FROM inscripciones ORDER BY id;";
+				$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+					$resultadoc = $con->consultar($cadena); 
+					if($resultadoc){
+					$cont=$con->contar($resultadoc);
+					if($cont<=0){	
+						$filas= -1;
+						echo " <option value='EROR'> No hay ningún docente registrado </option>'";
+						}else{
+						while($resultados = $con->registros($resultadoc)) {
+							$mostrar= "ID: $resultados->id fecha $resultados->fecha_ins_ini año: $resultados->anno_escolar ";
+							echo "<option  value='".$resultados->id."'>".$mostrar."</option>"; 
+							}//Fin while $resultados
+						}
+					}else{
+						$filas= -2;
+					}
+				?>
+				</select>
+				
+			</div>
+			<div class="clear"></div>
+
+			<div id="q46" class="q required">
+				<a class="item_anchor" name="ItemAnchor3"></a>
+				<label class="question top_question" for="msalumnos">Seleccion alumnos  </label>
+				<input name="btAlumno" type="button" id="btAlumno" value="Buscar Alumnos" /> 
+				<div name="reponseAlumno" id="reponseAlumno" >
+
+				</div>
+			
+			<div class="clear"></div>
+			
+			<div name="selAlumno" id="selAlumno" >
+			<table id="tabla_alumnos_seleccionados" class="dataTable" cellspacing="0" width="100%" style='display:none;'>
+			<?php 
+			  	$encabezado='<thead>';
+				$encabezado.='<tr  BGCOLOR="#58ACFA">';	
+				$pie='<tfoot>';
+				$pie.='<tr  BGCOLOR="#58ACFA">';	
+				$encabezado.= '<th>Id</th>
+							<th>Apellidos</th>
+							<th>Nombres</th>
+							<th>Sexo</th>
+							<th>Ciescolar</th>';
+				$encabezado .= 	'</tr> </thead>';
+				$pie.= '<th>Id</th>
+							<th>Apellidos</th>
+							<th>Nombres</th>
+							<th>Sexo</th>
+							<th>Ciescolar</th>';
+				$pie .= 	'</tr> </tfoot>';
+			echo $encabezado;
+			echo $pie;
+			?>
+				<tbody class="cebra">
+			<?php 			
+			//echo $datarec;
+			?>	 
+        </tbody>
+    </table>
+			</div>
+				<div id="respuestaProcesoAlumnnos" ></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="clear"></div>
+		</div>
+		
+
+		
+                                    <!-- END_ITEMS -->
+	<input name="EParam" value="FzpUCZwnDno=" type="hidden">
+		<div class="outside_container">
+			<div class="buttons_reverse">
+			<input name="Guardar" value="Guardar" class="submit_button" id="FSsubmit" type="button" onclick="recorerAlumnosSeleccionados()">
+			<input name="Buscar" value="Buscar" class="submit_button" id="Buscar" type="button" onclick="BuscarRAl()">
+			<input name="Listar" value="Listar" class="submit_button" id="Listar" type="button" onclick="ListarPRAl();">
+		</div></div>
+		</form>
+        <script>                                                    
+	
+$(document).ready(function() {
+    $('#tabla_alumnos').DataTable();
+} );
+		</script>
+</body>
+
+</html>
